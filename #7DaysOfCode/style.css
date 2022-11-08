@@ -1,0 +1,70 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+    --cinza: #667085;
+    --azul-escuro: #3A404E;
+    --vermelho-escuro: #8E2424;
+
+    --fonte-padrao: 'Inter', sans-serif;
+}
+
+
+
+
+* {
+    margin: 0;
+}
+
+.body {
+    font-family: var(--fonte-padrao);
+}
+
+.cabecalho {
+    display: flex;
+    width: auto;
+    margin: 2em 15%;
+}
+
+.cabecalho_logo {
+    margin-right: 3em;
+    font-weight: 500;
+}
+
+/* Menu do cabeçalho do site */
+
+.cabecalho_menu {
+    display: flex;
+    list-style: none;
+}
+
+.cabecalho_menu_item {
+    margin-left: 2em;
+}
+
+.cabecalho_lista_link {
+    text-decoration: none;
+    color: var(--cinza);
+}
+
+/* Menu de acesso do cabeçalho do site */
+
+.cabecalho_menu_acesso {
+    display: flex;
+    list-style: none;
+    margin-left: 10em;
+}
+
+.cabecalho_menu_acesso_item {
+    margin-left: 2em;
+}
+
+.cabecalho_lista_link_acesso {
+    border: 1px solid #8E2424;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: var(--vermelho-escuro);
+    color: white;
+}
