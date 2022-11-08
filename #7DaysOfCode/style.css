@@ -24,12 +24,20 @@
 .cabecalho {
     display: flex;
     width: auto;
-    margin: 2em 15%;
+    margin: 2em 13%;
+    align-items: center;
 }
 
 .cabecalho_logo {
     margin-right: 3em;
     font-weight: 500;
+}
+
+.logo {
+    padding-right: 0.5em;
+    width: 27px;
+    height: 26.99px;
+
 }
 
 /* Menu do cabeçalho do site */
