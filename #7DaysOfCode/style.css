@@ -7,6 +7,8 @@
 @import url("style/cabecalho.css");
 @import url("style/titulo.css");
 @import url("style/metricas.css");
+@import url("style/vagas.css");
+@import url("style/funcoes.css");
 
 /* Nome dos padrões utilizados */
 
@@ -14,6 +16,8 @@
     --cinza: #667085;
     --azul-escuro: #3A404E;
     --vermelho-escuro: #8E2424;
+    --cinza-azulado: #101828;
+    --vermelho-claro: rgba(142, 36, 36, 0.05);
 
     --fonte-padrao: 'Inter', sans-serif;
 }

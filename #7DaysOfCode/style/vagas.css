@@ -1,0 +1,25 @@
+/* Vagas em geral */
+
+.vagas {
+    text-align: center;
+}
+
+/* Estilos de cada um */
+
+.titulo_secundario {
+    margin-bottom: 20px;
+}
+
+.titulo_secundario_fundo-vermelho {
+    background: var(--vermelho-claro);
+    border-radius: 16px;
+    padding: 4px 12px;
+}
+
+.titulo_principal {
+    margin-bottom: 20px;
+}
+
+.titulo_descricao {
+    margin-bottom: 64px;
+}

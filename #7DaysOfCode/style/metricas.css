@@ -3,6 +3,7 @@
 .metricas {
     display: flex;
     margin: 107px 112px 0 112px;
+    height: 288px;
 
 }
 
@@ -10,4 +11,21 @@
 
 .metricas_container {
     margin-left: 32px;
+    width: 280px;
+}
+
+.metricas_container_titulo {
+    color: var(--vermelho-escuro);
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 12px;
+}
+
+.metricas_container_subtitulo {
+    color: var(--cinza-azulado);
+    margin-bottom: 8px;
+}
+
+.metricas_container_descricao {
+    color: var(--cinza);
 }
