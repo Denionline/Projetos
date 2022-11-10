@@ -1,0 +1,13 @@
+/* Estilo geral das metricas */ 
+
+.metricas {
+    display: flex;
+    margin: 107px 112px 0 112px;
+
+}
+
+/* Estilos de cada item */
+
+.metricas_container {
+    margin-left: 32px;
+}

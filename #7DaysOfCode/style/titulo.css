@@ -1,0 +1,28 @@
+/* Estilo geral do titulo */
+
+.titulo {
+    text-align: center;
+    margin: 96px 0 0 0;
+}
+
+/* Estilos de cada item */
+
+.titulo_secundario {
+    color: var(--vermelho-escuro);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.titulo_principal {
+    margin: 24px 0 36px 0;
+    font-weight: 600;
+    font-size: 48px;
+
+}
+
+.titulo_descricao {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 325px;
+    color: var(--cinza);
+}
