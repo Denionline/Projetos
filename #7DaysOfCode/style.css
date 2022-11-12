@@ -10,6 +10,7 @@
 @import url("style/vagas.css");
 @import url("style/funcoes.css");
 @import url("style/avaliacao.css");
+@import url("style/rodape.css");
 
 /* Nome dos padrões utilizados */
 
@@ -20,6 +21,9 @@
     --cinza-azulado: #101828;
     --vermelho-claro: rgba(142, 36, 36, 0.05);
     --cinza-claro: #EAECF0;
+    --cinza-meio-claro: #D0D5DD;
+    --branco: white;
+    --cinza-meio-escuro: #98A2B3;
 
     --fonte-padrao: 'Inter', sans-serif;
 }

@@ -1,0 +1,35 @@
+/* Rodapé inteiro */
+
+.rodape {
+    text-align: center;
+    margin-top: 256px;
+}
+
+/* Estilos de cada um */
+
+.rodape_cadastro_e-mail {
+    padding: 12px 14px 12px 16px;
+    width: 330px;
+    border: 1px solid var(--cinza-meio-claro);
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.rodape_cadastro_botao {
+    border: 1px solid var(--vermelho-escuro);
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--branco);
+    background-color: var(--vermelho-escuro);
+    margin-left: 16px;
+}
+
+.rodape_texto {
+    margin: 32px 0 96px 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--cinza-meio-escuro);
+}

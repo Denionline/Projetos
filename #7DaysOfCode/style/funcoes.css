@@ -22,6 +22,10 @@
     border-radius: 16px;
 }
 
+.funcoes_container:hover {
+    border: 1px solid var(--cinza-meio-escuro);
+}
+
 /* Estilos dentro dos containers */
 
 .funcoes_container_cargo {
@@ -39,4 +43,9 @@
 
 .funcoes_container_salario {
     margin-left: 24px;
+}
+
+.avatar:hover {
+    transform: scale(2);
+    transition: 0.5s;
 }
