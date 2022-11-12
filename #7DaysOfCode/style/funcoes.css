@@ -8,25 +8,35 @@
 /* Estilo do titulo do container */
 
 .funcoes_area {
-    
+    margin: 64px 0 32px 0;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 /* Estilos dos containers */
 
 .funcoes_container {
-
+    margin-bottom: 24px;
+    border: 1px solid var(--cinza-claro);
+    padding: 24px 24px 28px 24px;
+    border-radius: 16px;
 }
 
 /* Estilos dentro dos containers */
 
 .funcoes_container_cargo {
-
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 18px
 }
 
-.funcoes_container_carga-horaria {
-
+.funcoes_container_descricao-do-cargo {
+    display: flex;
+    color: var(--cinza);
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .funcoes_container_salario {
-
+    margin-left: 24px;
 }

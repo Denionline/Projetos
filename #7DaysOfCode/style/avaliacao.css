@@ -1,0 +1,26 @@
+/* Toda a area de avaliacao */
+
+.avaliacao {
+    text-align: center;
+    margin-top: 96px;
+}
+
+/* Estilos de cada um */
+
+.titulo_principal_avaliacao {
+    margin: 24px 0 36px 0;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.avaliacao_nome {
+    margin: 16px 0 4px 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.avaliacao_profissao {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cinza);
+}

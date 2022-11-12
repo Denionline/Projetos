@@ -16,8 +16,10 @@
     padding: 4px 12px;
 }
 
-.titulo_principal {
-    margin-bottom: 20px;
+.titulo_principal_vagas {
+    margin: 24px 0 20px 0;
+    font-weight: 600;
+    font-size: 36px;
 }
 
 .titulo_descricao {

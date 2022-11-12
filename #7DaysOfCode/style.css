@@ -9,6 +9,7 @@
 @import url("style/metricas.css");
 @import url("style/vagas.css");
 @import url("style/funcoes.css");
+@import url("style/avaliacao.css");
 
 /* Nome dos padrões utilizados */
 
@@ -18,6 +19,7 @@
     --vermelho-escuro: #8E2424;
     --cinza-azulado: #101828;
     --vermelho-claro: rgba(142, 36, 36, 0.05);
+    --cinza-claro: #EAECF0;
 
     --fonte-padrao: 'Inter', sans-serif;
 }
