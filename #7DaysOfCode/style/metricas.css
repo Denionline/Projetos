@@ -2,9 +2,9 @@
 
 .metricas {
     display: flex;
-    margin: 107px 112px 0 112px;
+    margin: 107px auto 0 auto;
     height: 288px;
-
+    justify-content: center;
 }
 
 /* Estilos de cada item */
