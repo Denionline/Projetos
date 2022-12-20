@@ -1,0 +1,46 @@
+:root {
+    --cinza: #aaa;
+    --vermelha: #e93d50;
+    --vermelha-escura: #af303f;
+    --branca: rgb(249, 229, 211);
+    --luz: rgb(229, 255, 0);
+  }
+
+body{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--branca);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--vermelha);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.33);
+}
+
+.tecla {
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 40px;
+}
+
+.tecla:hover {
+    border: 1px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .2s;
+}
