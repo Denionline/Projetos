@@ -44,9 +44,3 @@ body {
     margin-top: 20px;
 
 }
-
-.resposta img {
-    border-radius: 10px;
-    transform: scale(1.2);
-    transition: 2s;
-}
