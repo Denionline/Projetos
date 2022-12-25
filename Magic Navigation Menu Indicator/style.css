@@ -1,0 +1,13 @@
+header{
+    margin-top: 10em;  
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+
+.item {
+    width: 400px;
+}
