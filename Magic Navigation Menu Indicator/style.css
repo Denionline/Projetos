@@ -1,13 +1,60 @@
-header{
-    margin-top: 10em;  
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root
+{
+    --cor: #222327;
+}
+
+body 
+{
     display: flex;
     justify-content: center;
     text-align: center;
-
+    margin-top: 30vh;
+    background: var(--cor);
 }
 
-
-
-.item {
+.menu
+{
+    position: relative;
     width: 400px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.lista
+{
+    display: flex;
+    width: 350px;
+}
+
+.item
+{
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+.item a
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    
 }
