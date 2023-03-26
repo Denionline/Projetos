@@ -29,3 +29,5 @@ const loop = setInterval(() => {
 }, 10);
 
 window.addEventListener('keydown', jump)
+window.addEventListener('click', jump)
+window.addEventListener('touch', jump)

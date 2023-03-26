@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --fonte: 'Press Start 2P', cursive;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -18,7 +24,7 @@
     position: absolute;
     width: 50px;
     bottom: 0;
-    animation: pipe-animation 1.5s infinite linear;
+    /* animation: pipe-animation 1.5s infinite linear; */
 }
 
 .mario {
@@ -34,7 +40,38 @@
 .clouds {
     position: absolute;
     width: 500px;
-    animation: clouds-animation 10s infinite linear;
+    /* animation: clouds-animation 10s infinite linear; */
+}
+
+.tryAgain {
+    display: grid;
+    position: relative;
+
+    background-color: #691E06;
+    border-radius: 10px;
+
+    width: 50%;
+    height: 50%;
+    margin: 20vh auto 0 auto;
+
+    font-family: var(--fonte);
+    text-align: center;
+}
+
+.tryAgain h1{
+    padding: 20px;
+    animation: colors 2s infinite linear;
+}
+
+.tryAgain span{
+    font-size: 2em;
+    color: white;
+    transition: 0.1s;
+}
+
+.tryAgain span:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 @keyframes pipe-animation{
@@ -71,5 +108,23 @@
 
     to{
         right: 100%;
+    }
+}
+
+@keyframes colors{
+    0%{
+        color: white;
+    }
+    25%{
+        color: red;
+    }
+    50%{
+        color: yellow;
+    }
+    75%{
+        color: green;
+    }
+    100%{
+        color: blue;
     }
 }
