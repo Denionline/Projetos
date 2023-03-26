@@ -1,5 +1,6 @@
 const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe')
+const tryagain = document.querySelector('.tryAgain')
 
 const jump = () => {
     mario.classList.add('jump')
@@ -25,9 +26,16 @@ const loop = setInterval(() => {
         mario.src = 'img/game-over.png'
         mario.style.width = '75px'
         mario.style.marginLeft = '50px'
+
+        tryagain.style.display = 'grid'
+
     }
 }, 10);
 
 window.addEventListener('keydown', jump)
 window.addEventListener('click', jump)
 window.addEventListener('touch', jump)
+
+document.querySelector('#again').addEventListener('click', () => {
+    location.reload()
+})

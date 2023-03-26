@@ -24,7 +24,7 @@
     position: absolute;
     width: 50px;
     bottom: 0;
-    /* animation: pipe-animation 1.5s infinite linear; */
+    animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
@@ -40,11 +40,11 @@
 .clouds {
     position: absolute;
     width: 500px;
-    /* animation: clouds-animation 10s infinite linear; */
+    animation: clouds-animation 10s infinite linear;
 }
 
 .tryAgain {
-    display: grid;
+    display: none;
     position: relative;
 
     background-color: #691E06;
@@ -82,7 +82,6 @@
         right: 100%;
     }
 }
-
 @keyframes jump{
     0%{
         bottom: 0px;
@@ -100,7 +99,6 @@
         bottom: 0px;
     }
 }
-
 @keyframes clouds-animation{
     from{
         right: -500px;
@@ -110,7 +108,6 @@
         right: 100%;
     }
 }
-
 @keyframes colors{
     0%{
         color: white;
