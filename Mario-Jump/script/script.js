@@ -49,7 +49,7 @@ const loop = setInterval(() => {
 }
 
 window.addEventListener('keydown', jump)
-window.addEventListener('touch', jump)
+window.addEventListener('click', jump)
 
 document.querySelector('#again').addEventListener('click', () => {
     location.reload();    
