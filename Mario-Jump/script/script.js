@@ -22,7 +22,7 @@ function jump (){
     }, 500)
 }
 
-const loop = setInterval(() => {
+function loop((){
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
     // console.log(point)
@@ -48,6 +48,7 @@ const loop = setInterval(() => {
     requestAnimationFrame(loop);
 }
 
+loop();
 window.addEventListener('keydown', jump)
 window.addEventListener('click', jump)
 
