@@ -14,7 +14,7 @@ function play () {
     pipeClass.style.display = 'block'
 }
 
-const jump = () => {
+function jump (){
     mario.classList.add('jump')
 
     setTimeout(() => {
@@ -45,10 +45,11 @@ const loop = setInterval(() => {
         point = point + 1
         points.innerHTML = point
     }
-}, 10);
+    requestAnimationFrame(loop);
+}
 
 window.addEventListener('keydown', jump)
-window.addEventListener('touch', jump)
+window.addEventListener('click', jump)
 
 document.querySelector('#again').addEventListener('click', () => {
     location.reload();    
