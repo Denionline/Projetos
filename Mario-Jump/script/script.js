@@ -22,7 +22,7 @@ function jump (){
     }, 500)
 }
 
-function loop((){
+function loop(setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
     // console.log(point)
@@ -44,13 +44,11 @@ function loop((){
     } else if(pipePosition < 121 && pipePosition > 0){
         point = point + 1
         points.innerHTML = point
-    }
-    requestAnimationFrame(loop);
+    }, 10);
 }
 
 loop();
-window.addEventListener('keydown', jump)
-window.addEventListener('click', jump)
+window.addEventListener('keydown', jump); window.addEventListener('click', jump);
 
 document.querySelector('#again').addEventListener('click', () => {
     location.reload();    
