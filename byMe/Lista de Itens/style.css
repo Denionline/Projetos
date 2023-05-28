@@ -1,0 +1,58 @@
+body{
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.979), purple);
+    display: block;
+    width: 50%;
+    margin: auto;
+ }
+
+ h1{
+    text-align: center;
+    color: aliceblue;
+ }
+
+ div{
+    text-align: center;
+ }
+
+ button{
+    cursor: pointer;
+ }
+
+ .cadastro{
+    background-color: rgba(219, 123, 219, 0.514);
+    padding-bottom: 8px;
+    border-radius: 10px;
+ }
+
+ .item{
+    display: flex;
+    margin: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+    cursor: pointer;
+    transition: .3s;
+ }
+
+ .item:hover{
+    background-color: rgba(219, 123, 219, 0.164);
+    /* border: 2px solid white; */
+ }
+
+ .item:active{
+    background-color: blue;
+ }
+
+ .item > input{
+    border-radius: 100%;
+    background: black;
+    cursor: pointer;
+    margin: 0 10px;
+ }
+
+ .adicionais{
+    margin-top: 10px;
+    width: auto;
+    padding: 5p; 
+ }

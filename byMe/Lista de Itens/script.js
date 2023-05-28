@@ -1,68 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Itens</title>
-    <style>
-         body{
-            background: linear-gradient(to right,rgba(0, 0, 0, 0.979), purple);
-            display: block;
-            width: 50%;
-            margin: auto;
-         }
-         h1{
-            text-align: center;
-         }
-         div{
-            text-align: center;
-         }
-         button{
-            cursor: pointer;
-         }
-         .cadastro{
-            background-color: rgba(219, 123, 219, 0.514);
-            padding-bottom: 8px;
-            border-radius: 10px;
-         }
-         .item{
-            display: flex;
-            margin: 10px;
-            border: 1px solid rgb(255, 255, 255);
-            border-radius: 50px;
-            color: white;
-            padding: 3px;
-            cursor: pointer;
-         }
-         .item > input{
-            cursor: pointer;
-            margin: 0 10px;
-         }
-         .adicionais{
-            margin-top: 10px;
-            width: auto;
-            padding: 5p; 
-         }
-    </style>
-</head>
-<body>
-    <div class="cadastro">
-        <h1>Cadastro item</h1>
-        <input type="text" id="campo">
-        <button id="btn">Cadastrar</button>
-        <div class="adicionais">
-            <button id="slT">Selecionar todos</button>
-            <button id="btnD">Excluir</button>
-        </div>
-        <div class="itens">
-            
-        </div>
-    </div>
-
-
-    <script>
-        let itemDaLista = document.querySelectorAll('.item');
+let itemDaLista = document.querySelectorAll('.item');
         const listaDeItens = document.querySelector('.itens');
         const botao = document.querySelector('#btn');
         const campo = document.querySelector('#campo');
@@ -163,9 +99,10 @@
 
         function selecionaTudo(){
             for(i=0;i<listaDeItens.children.length;i++){
-                listaDeItens.children[i].children[0].checked = true;
+                if(listaDeItens.children[i].children[0].checked){
+                    listaDeItens.children[i].children[0].checked = false;
+                }else{
+                    listaDeItens.children[i].children[0].checked = true;
+                }
             }  
         }
-    </script>
-</body>
-</html>
