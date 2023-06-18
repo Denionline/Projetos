@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+:root{
+    --cor-caixa-de-pesquisa: rgba(0, 64, 241, 0.144);
+    --cor-das-letras-1: black;
+    --cor-das-letras-2: rgba(0, 0, 0, 0.616);
+    --fonte-padrao: 'Ubuntu', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(214, 188, 193);
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--fonte-padrao);
+}
+.cabecalho{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: gray;
+}
+.cabecalho_titulo{
+    flex: 1 1 10%;
+    margin-left: 10px;
+    font-size: 20pt;
+}
+.cabecalho_nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    flex: 2 1 10%;
+    margin-right: 20px;
+    width: 100%;
+}
+.cabecalho_nav_lista{
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+}
+.cabecalho_nav_lista_item{
+    display: flex;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 2% 14px 2%;
+    transition: .3s;
+    cursor: pointer;
+}
+.cabecalho_nav_lista_item_pseudo:hover{
+    background-color: rgba(0, 0, 255, 0.562);
+}
+.cabecalho_nav_lista_item_ativo{
+    background-color: rgba(0, 0, 255, 0.562);
+}
+.cabecalho_nav_lista_item > input{
+    border-radius: 5px 0 0 5px;
+    border: 0;
+    background-color: var(--cor-caixa-de-pesquisa);
+    padding-left: 5px;
+}
+#cabecalho_nav_lista_item-input{
+    margin-left: auto;
+    cursor: pointer;
+}
+#cabecalho_nav_lista_item-input > span{
+    background-color: var(--cor-caixa-de-pesquisa);
+    padding-right: 5px;
+    border-radius: 0 5px 5px 0;
+}
+.cabecalho_nav_lista_item > input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.cabecalho_nav_lista_item > input::placeholder{
+    padding-left: 5px;
+    color: var(--cor-das-letras-2);
+}
+
+@media (max-width: 592px){
+    .cabecalho_nav{
+        display: none;
+    }
+}
