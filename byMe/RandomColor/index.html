@@ -24,13 +24,13 @@
             align-items: center;
             justify-content: center;
             height: 300px;
-            width: 400px;
+            width: 500px;
         }
         h1{
             font-size: 3em;
         }
-        .number{
-            font-size: 4em;
+        .name-color{
+            font-size: 2em;
             margin: 20px 0;
         }
         .buttons{
@@ -53,23 +53,36 @@
 <body>
     <main>
         <h1>Random Color</h1>
-        <div class="name-color"></div>
+        <div class="name-color">Background-color: <span class="color"></span></div>
         <div class="button">Change Color</div>
     </main>
 
     <script>
-        const numero = document.querySelector('.name-color')
+        const nameColor = document.querySelector('.color')
         const button = document.querySelector('.button')
         const body = document.querySelector('body')
+        const hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','F','G']
 
         button.addEventListener('click', (e) => {
-            let first = Math.random() * (255 - 0) + 0;
-            let second = Math.random() * (255 - 0) + 0;
-            let third = Math.random() * (255 - 0) + 0;
+            let hexColor = '#';
+            
 
-            body.style.background = `rgb(${first},${second},${third})`
+            // let first = Math.random() * (255 - 0) + 0;
+            // let second = Math.random() * (255 - 0) + 0;
+            // let third = Math.random() * (255 - 0) + 0;
+
+            for(i=0;i<6;i++){
+                hexColor += hex[numberRandom()]
+            }
+
+            body.style.background = hexColor
+            nameColor.innerHTML = hexColor
         })
-        
+
+        function numberRandom(){
+            return parseInt(Math.random() * (hex.length - 0) + 0);
+        }
+
     </script>
 </body>
 </html>
