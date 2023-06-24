@@ -1,19 +1,15 @@
 const container = document.querySelector('.container-author')
+
 const nextBtn = document.querySelector('.next-btn')
 const prevBtn = document.querySelector('.prev-btn')
-const randomBtn = document.querySelector('.random-btn')
-let seqAuthor = 0;
 
-let author = {
-    img: document.querySelector('#person-img'),
-    name: document.querySelector('#author'),
-    job: document.querySelector('#job'),
-    info: document.querySelector('#info')
-}
+const randomBtn = document.querySelector('.random-btn')
+
+let seqAuthor = 0;
 
 nextBtn.addEventListener('click', () => {
     seqAuthor += 1;
-    if(seqAuthor == 4){
+    if(seqAuthor > authors.length - 1){
         seqAuthor = 0
     }
     carregaDados()
@@ -21,8 +17,8 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
     seqAuthor -= 1;
-    if(seqAuthor == -1){
-        seqAuthor = 3
+    if(seqAuthor < 0){
+        seqAuthor = authors.length - 1;
     }
     carregaDados()
 })
