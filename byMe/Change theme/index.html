@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Theme</title>
+    <style>
+        *{margin: 0;padding: 0;border: 0;}
+        body{
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            transition: .5s;
+        }
+        h1{
+            position: relative;
+            top: 50%;
+            left: 40%;
+            font-size: 5em;
+        }
+        img{
+            position: relative;
+            top: 5px;
+            left: 90%;
+            height: 50px;
+            width: 50px;
+            padding: 10px;
+            border-radius: 100%;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        img:active{
+            transition: .3s;
+            transform: rotate(-360deg);
+        }
+        .moon{
+            background-color: transparent;
+        }
+        .moon ~ img:hover{
+            border: 1px solid black;
+        }
+        .sun{
+            color: white;
+            background-color: transparent;
+        }
+        .sun ~ img:hover{
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+
+    </h1>
+    <script>
+        const imgMoon = {
+            id: 'moon',
+            cor: 'white',
+            local: 'img/moon.avif',
+            periodo: 'Night'
+        };
+        const imgSun = {
+            id: 'sun',
+            cor: 'rgb(1, 1, 15)',
+            local: 'img/sun.png',
+            periodo: 'Day'
+        };
+        
+        function corPadrao(){
+            if(!document.querySelector('img')){
+                document.body.appendChild(document.createElement('img'))
+            }
+            const img = document.querySelector('img');
+            if(localStorage.getItem('color')){
+                setaCor(img)
+            }else{
+                img.src = imgMoon.local
+                img.classList.add(imgMoon.id);
+                let texto = document.querySelector('h1')
+                texto.innerHTML = imgMoon.periodo
+                texto.classList.add(imgMoon.id)
+                document.body.style.background = imgMoon.cor
+            }
+                 
+            img.addEventListener('click', (icon) => {
+                if(localStorage.getItem('color')){
+                    let imgAtual = JSON.parse(localStorage.getItem('color'));
+                    if(imgAtual.id == 'sun'){
+                        localStorage.setItem('color', JSON.stringify(imgMoon))
+                        img.classList.toggle('sun')
+                        document.querySelector('h1').classList.toggle('sun')
+                        setaCor(img)
+                    }else{
+                        localStorage.setItem('color', JSON.stringify(imgSun))
+                        img.classList.toggle('moon')
+                        document.querySelector('h1').classList.toggle('moon')
+                        setaCor(img)
+                    }
+                }else{
+                    localStorage.setItem('color', JSON.stringify(imgSun))
+                    corPadrao()
+                }
+            })
+        }
+        function setaCor(img){
+            let imgAtual = JSON.parse(localStorage.getItem('color'));
+            img.src = imgAtual.local
+            img.classList.add(imgAtual.id)
+            let texto = document.querySelector('h1')
+            texto.innerHTML = imgAtual.periodo
+            texto.classList.add(imgAtual.id)
+            document.body.style.background = imgAtual.cor
+        }
+        
+        corPadrao()
+    </script>
+</body>
+</html>
