@@ -14,7 +14,7 @@
         }
         h1{
             position: relative;
-            top: 50%;
+            top: 40%;
             left: 40%;
             font-size: 5em;
         }
@@ -37,38 +37,41 @@
             background-color: transparent;
         }
         .moon ~ img:hover{
-            border: 1px solid black;
+            border: 1px solid rgba(0, 0, 0, 0.404);
         }
         .sun{
             color: white;
             background-color: transparent;
         }
         .sun ~ img:hover{
-            border: 1px solid white;
+            border: 1px solid rgba(255, 255, 255, 0.411);
         }
     </style>
 </head>
 <body>
+    <span class="img" data-icon>
+
+    </span>
     <h1>
 
     </h1>
     <script>
+        const icon = document.querySelector('[data-icon]')
         const imgMoon = {
             id: 'moon',
             cor: 'white',
             local: 'img/moon.avif',
-            periodo: 'Night'
+            periodo: 'Day'
         };
         const imgSun = {
             id: 'sun',
             cor: 'rgb(1, 1, 15)',
             local: 'img/sun.png',
-            periodo: 'Day'
+            periodo: 'Night'
         };
-        
         function corPadrao(){
             if(!document.querySelector('img')){
-                document.body.appendChild(document.createElement('img'))
+                icon.appendChild(document.createElement('img'))
             }
             const img = document.querySelector('img');
             if(localStorage.getItem('color')){
