@@ -92,6 +92,9 @@
         input[type=date]::-webkit-calendar-picker-indicator{
             cursor: pointer;
         }
+        span{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -116,22 +119,33 @@
     </div>
 
     <script> 
-        const button = document.querySelector('[data-submit]');
         const campoNome = document.querySelector('[data-nome]');
         const campoConvenio = document.querySelector('[data-convenio]');
         const campoProcedimento = document.querySelector('[data-procedimento]');
         const campoData = document.querySelector('[data-data]');
-        
-        button.addEventListener('click', () => {
+
+        document.querySelector('[data-submit]').addEventListener('click', () => telaCadastro())
+        document.querySelectorAll('.cadastro_campo').forEach(campo => campo.addEventListener('keydown', (key) => key.key == 'Enter'?telaCadastro():null))
+
+        function telaCadastro(){
             const paciente = {
                     nomeDoPaciente: campoNome.children[0].value,
                     convenioDoPaciente: campoConvenio.children[0].value,
                     procedimentoDoPaciente: campoProcedimento.children[0].value,
                     dataDaSolicitacaoDoPaciente: campoData.children[0].value
             }
-            console.log(paciente)
-            // google.script.run.adicionaPaciente(paciente)
-        })
+            document.querySelector('span')?document.querySelectorAll('span').forEach(span => span.remove()):null;
+
+
+            paciente.nomeDoPaciente == ''?campoNome.appendChild(document.createElement('span')).innerText = 'Insira o nome':null;
+            paciente.convenioDoPaciente == ''?campoConvenio.appendChild(document.createElement('span')).innerText = 'Insira o convênio':null;
+            paciente.procedimentoDoPaciente == ''?campoProcedimento.appendChild(document.createElement('span')).innerText = 'Insira um procedimento':null;
+            paciente.dataDaSolicitacaoDoPaciente == ''?campoData.appendChild(document.createElement('span')).innerText = 'Insira a data de solicitação':null;
+
+
+            document.querySelector('span')?null:google.script.run.adicionaPaciente(paciente);
+            
+        }
     </script>
 </body>
 </html>
