@@ -1,96 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+:root{
+   /* Cores */
+   --cor_1: #01415B;
+   --cor_2: #005148;
+   --cor_3: #019587;
+   --cor_4: #A6BC09;
+   --cor_5: #CCEA8D;
+   --cor_6: #d0ec009c;
+   --cor_branca: rgb(255, 255, 255);
+   --cor_de_fundo: var(--cor_5);
+   /* Fontes */
+   --fonte_titulo: 'Permanent Marker', 'cursive';
+   --fonte_itens: 'Comic Neue', 'cursive';
+   --fonte_botoes: 'Concert One', 'cursive';
+}
+*{padding: 0;border: 0;margin: 0;}
 body{
-    background: linear-gradient(to right,rgba(0, 0, 0, 0.979), purple);
-    display: block;
-    width: 50%;
-    margin: auto;
+   background: var(--cor_de_fundo);
+   width: 90%;
+   margin: 5% auto;
  }
-
- h1{
-    text-align: center;
-    color: aliceblue;
+h1{
+   font-family: var(--fonte_titulo);
+   text-transform: uppercase;
+   text-align: center;
+   color: var(--cor_branca);
+   padding: 5px 0;
  }
-
- div{
-    text-align: center;
- }
-
- button{
-    cursor: pointer;
- }
-
- #campo{
+div{
+   text-align: center;
+}
+button{
+   cursor: pointer;
+}
+#campo{
    width: 60%;
-   border-radius: 5px;
-   padding: 3px;
-   margin-right: 3%;
- }
+   padding: 10px;
+   margin: 3% 0;
+   border: 0 0 0 0;
+   font-size: 1.1em;
+}
+#campo:focus{
+   outline: 0;
+}
+#campo::placeholder{
+   font-family: var(--fonte_itens);
+   color: black;
+}
+.campo_inserir{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 95%;
+   margin: auto;
+   height: 40px;
+   background: var(--cor_branca);
 
- #btn{
-   width: 30%;
+}
+#btn{
+   width: 20%;
    padding: 5px;
+   margin-right: 5px;
    border: 1px solid rgba(99, 121, 150, 0.699);
-   border-radius: 5px;
-   background-color: rgb(5, 14, 145);
-   color: white;
+   border-radius: 1px;
+   background-color: var(--cor_3);
    transition: .3s;
- }
+   font-family: var(--fonte_botoes);
+   text-transform: uppercase;
+   font-size: 1.1em;
+}
 
- #btn:hover{
+#btn:hover{
    border: 1px solid white;
- }
+}
 
- .cadastro{
-    background-color: rgb(10, 61, 77);
-    padding-bottom: 8px;
-    border-radius: 10px;
-    box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.315);
- }
+.cadastro{
+   background: var(--cor_1);
+   padding-bottom: 8px;
+   border-radius: 10px;
+   box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.315);
+}
 
- .item{
-    display: flex;
-    margin: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.562);
-    border-radius: 10px;
-    color: white;
-    padding: 3px;
-    cursor: pointer;
-    transition: .3s;
- }
+.item{
+   display: flex;
+   position: relative;
+   margin: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.562);
+   border-radius: 10px;
+   padding: 3px;
+   cursor: pointer;
+   transition: .3s;
+   font-family: var(--fonte_itens);
+   background: var(--cor_6);
+}
 
- .item:hover{
-    /* background-color: rgba(219, 123, 219, 0.164); */
-    border: 1px solid white;
- }
+.item:hover{
+   border: 1px solid white;
+}
 
- .item:active{
-    background-color: blue;
- }
+/* .item:active{
+   background: var(--cor_4);
+} */
 
- .item > input{
-    border-radius: 100%;
-    background: black;
-    cursor: pointer;
-    margin: 0 10px;
- }
+.checkbox{
+   top: 0;
+   left: 0;
+   margin: 0 10px 0 5px;
+   background: var(--cor_branca);
+   border-radius: 30%;
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+   z-index: 1;
+}
 
- .adicionais{
+.checkbox:hover{
+   background: rgb(226, 226, 226);
+}
+.item > input{
+   position: absolute;
+   opacity: 0;
+   height: 20px;
+   width: 20px;
+   cursor: pointer;
+   z-index: 2;
+}
+.item > input:checked ~ .checkbox{
+   background: rgb(247, 4, 45);
+}
+
+.adicionais{
    display: flex;
    margin: 10px 20px 0 10px;
    align-items: center;
    justify-content: space-between;
    padding: 5px;
- }
+}
 
- .adicionais > button{
+.adicionais > button{
    padding: 5px;
    border-radius: 5px;
    border: 0;
-   background-color: rgba(9, 184, 33, 0.925);
-   color: white;
+   background: var(--cor_3);
    border: 1px solid rgba(0, 0, 0, 0);
    transition: .2s;
- }
- 
- .adicionais > button:hover{
+   font-family: var(--fonte_botoes);
+   text-transform: uppercase;
+   font-size: 15px;
+}
+
+.corCheck{
+   /* background: var(--cor_4); */
+}
+
+.adicionais > button:hover{
    border: 1px solid white;
- }
+}
