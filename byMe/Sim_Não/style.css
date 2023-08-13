@@ -72,6 +72,11 @@ body{
     z-index: 5;
 }
 
+@media (max-width: 500px) {
+    .img_gato-de-buetas{
+        display: none;
+    }
+}
 .img_gato-de-buetas{
     position: absolute;
     height: 200px;
