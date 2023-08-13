@@ -10,6 +10,7 @@
    --cor_4: #A6BC09;
    --cor_5: #CCEA8D;
    --cor_6: #d0ec009c;
+   --cor_7: rgb(231, 0, 89);
    --cor_branca: rgb(255, 255, 255);
    --cor_de_fundo: var(--cor_5);
    /* Fontes */
@@ -129,7 +130,7 @@ button{
    z-index: 2;
 }
 .item > input:checked ~ .checkbox{
-   background: rgb(247, 4, 45);
+   background: var(--cor_7);
 }
 
 .adicionais{

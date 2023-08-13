@@ -103,6 +103,8 @@ function deleteItem(){
 }
 
 function selecionaTudo(){
+
+    
     for(i=0;i<listaDeItens.children.length;i++){
         if(listaDeItens.children[i].children[0].checked){
             listaDeItens.children[i].children[0].checked = false;

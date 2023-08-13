@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+:root{
+    --cor-fundo: #F2C6C2;
+    --cor-caixa: #F2B263;
+    --cor-botoes: #F2E8DF;
+    --cor-botoes-hover: #F28585;
+    --cor-verdi: rgba(32, 190, 0, 0.61);
+}
+
+*{border: 0;padding: 0;margin: 0;}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: var(--cor-fundo);
+    z-index: 0;
+}
+
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--cor-caixa);
+    width: 40%;
+    height: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 0 black;
+    z-index: 10;
+}
+.titulo{
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Merienda', cursive;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    width: 100%;
+}
+.btns > div{
+    background: var(--cor-botoes);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 100%;
+    transition: .3s;
+    font-family: 'Titan One', cursive;
+    font-size: 1.2em;
+}
+
+.btns > div:hover{
+    transform: scale(1.1);
+}
+
+.img_gatinho-tristonho{
+    position: absolute;
+    bottom: -200px;
+    height: 200px;
+    width: 200px;
+    transition: 3s;
+    z-index: 5;
+}
+
+.img_gato-de-buetas{
+    position: absolute;
+    height: 200px;
+    left: 35%;
+    top: 33%;
+    transition: 5s;
+    z-index: 5;
+}
+.img_chuva{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    opacity: 0;
+    transition: 3s;
+}
+
+.img_doguenho{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    z-index: 11;
+}
+
+.img_coracoes-subindo{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
