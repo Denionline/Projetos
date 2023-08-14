@@ -39,14 +39,14 @@ function larguraRandom(tamanhoW){
 
 function extras(contagem){
     if(contagem == 2){
-        titulo.innerHTML = 'Sério?'
+        titulo.innerHTML = 'Você quis dizer Sim?'
     }
     if(contagem == 3){
         imgGatinhoTristonho.style.right = 0
         imgGatinhoTristonho.style.bottom = 0
     }
     if(contagem == 4){
-        imgGatoDeBuetas.style.top = '6%'
+        imgGatoDeBuetas.style.top = '9%'
     }
     if(contagem == 5){
         imgChuva.style.opacity = 1;
