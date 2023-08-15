@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
+:root{
+    /* Cores */
+    --cor_box_begin: gray;
+
+    --cor_box_list: gray;
+    --cor_box_list_camp: white;
+    --cor_box_list_camp-btn-add: rgb(72, 72, 230);
+    --cor_box_list_itemns_item: rgb(165, 162, 162);
+
+    /* Fontes */
+    --font_box_begin_tittle: 'Special Elite', 'cursive';
+}
+
+*{border: 0;padding: 0;margin: 0;}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+div{
+    z-index: 1;
+}
+.img_background{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+    z-index: 0;
+}

@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.box_list{
+    display: flex;
+    flex-direction: column;
+    background: var(--cor_box_list);
+    width: 50%;
+    margin-top: 3%;
+}
+.box_list_tittle{
+    font-size: 1.2em;
+    margin: 10px auto;
+}
+.box_list_camp{
+    display: flex;
+    justify-content: space-between;
+    background: var(--cor_box_list_camp);
+    margin: 0 10px;
+    padding: 5px 5px 5px 2px;
+}
+.box_list_camp-insertText{
+    color: black;
+}
+.box_list_camp-insertText:focus{
+    outline: 0;
+}
+.box_list_camp-btn-add{
+    cursor: pointer;
+    padding: 5px;
+    background: var(--cor_box_list_camp-btn-add);
+}
+.box_list_camp-btn-add:active{
+    transform: scale(0.9);
+}
+
+.box_list_itemns{
+    margin-top: 20px;
+}
+.box_list_itemns_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cor_box_list_itemns_item);
+    margin: 10px;
+    padding: 3px;
+    border-radius: 10px;
+}
+.box_list_itemns_item-name{
+    font-size: 1.1em;
+}
+.box_list_itemns_item-iconDelete{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.box_list_itemns_item-iconDelete:hover{
+    transform: scale(1.1);
+}
+.box_list_itemns_item-iconDelete:active{
+    transform: scale(0.9);
+}
