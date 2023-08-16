@@ -22,7 +22,7 @@ body{
     padding: 5px 5px 5px 2px;
 }
 .box_list_camp-insertText{
-    color: black;
+    width: 90%;
 }
 .box_list_camp-insertText:focus{
     outline: 0;
@@ -45,7 +45,7 @@ body{
     justify-content: space-between;
     background: var(--cor_box_list_itemns_item);
     margin: 10px;
-    padding: 3px;
+    padding: 3px 3px 3px 10px;
     border-radius: 10px;
 }
 .box_list_itemns_item-name{
