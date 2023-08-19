@@ -1,0 +1,160 @@
+body{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+/* Primeira lista */
+
+.box1_list{
+    display: flex;
+    flex-direction: column;
+    background: var(--cor_box_list);
+    width: 35%;
+    margin: 3% 0;
+}
+.box1_list_tittle{
+    font-size: 1.2em;
+    margin: 10px auto;
+}
+.box1_list_camp{
+    display: flex;
+    justify-content: space-between;
+    background: var(--cor_box_list_camp);
+    margin: 0 10px;
+    padding: 5px 5px 5px 2px;
+}
+.box1_list_camp-insertText{
+    width: 90%;
+}
+.box1_list_camp-insertText:focus{
+    outline: 0;
+}
+.box1_list_camp-btn-add{
+    cursor: pointer;
+    padding: 5px;
+    background: var(--cor_box_list_camp-btn-add);
+}
+.box1_list_camp-btn-add:active{
+    transform: scale(0.9);
+}
+.box1_list_camp-error{
+    display: none;
+    margin: 0 10px;
+    color: var(--cor_box_list_camp-error);
+}
+
+.box1_list_itemns{
+    margin-top: 20px;
+    max-height: 300px;
+    overflow: auto;
+}
+.box1_list_itemns_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cor_box_list_itemns_item);
+    margin: 10px;
+    padding: 3px 3px 3px 10px;
+    border-radius: 10px;
+}
+.box1_list_itemns_item-name{
+    font-size: 1.1em;
+}
+.box1_list_itemns_item-iconDelete{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.box1_list_itemns_item-iconDelete:hover{
+    transform: scale(1.1);
+}
+.box1_list_itemns_item-iconDelete:active{
+    transform: scale(0.9);
+}
+
+/* Segunda lista */
+
+.box2_list{
+    display: flex;
+    flex-direction: column;
+    background: var(--cor_box_list);
+    width: 35%;
+    margin: 3% 0 0 3%;
+}
+.box2_list_tittle{
+    font-size: 1.2em;
+    margin: 10px auto;
+}
+.box2_list_camp{
+    display: flex;
+    justify-content: space-between;
+    background: var(--cor_box_list_camp);
+    margin: 0 10px;
+    padding: 5px 5px 5px 2px;
+}
+.box2_list_camp-insertText{
+    width: 90%;
+}
+.box2_list_camp-insertText:focus{
+    outline: 0;
+}
+.box2_list_camp-btn-add{
+    cursor: pointer;
+    padding: 5px;
+    background: var(--cor_box_list_camp-btn-add);
+}
+.box2_list_camp-btn-add:active{
+    transform: scale(0.9);
+}
+.box2_list_camp-error{
+    display: none;
+    margin: 0 10px;
+    color: var(--cor_box_list_camp-error);
+}
+
+.box2_list_itemns{
+    margin-top: 20px;
+    max-height: 300px;
+    overflow: auto;
+}
+.box2_list_itemns_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cor_box_list_itemns_item);
+    margin: 10px;
+    padding: 3px 3px 3px 10px;
+    border-radius: 10px;
+}
+.box2_list_itemns_item-name{
+    font-size: 1.1em;
+}
+.box2_list_itemns_item-iconDelete{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.box2_list_itemns_item-iconDelete:hover{
+    transform: scale(1.1);
+}
+.box2_list_itemns_item-iconDelete:active{
+    transform: scale(0.9);
+}
+
+/* Botões */
+
+.list_btn{
+    display: flex;
+    flex-direction: column;
+    margin: 3% 0 0 5%;
+    width: 10%;
+}
+.list_btn-create{
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+    background: var(--cor_list_btn-create);
+}

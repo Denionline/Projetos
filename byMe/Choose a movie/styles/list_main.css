@@ -7,8 +7,8 @@ body{
     display: flex;
     flex-direction: column;
     background: var(--cor_box_list);
-    width: 50%;
-    margin-top: 3%;
+    width: 70%;
+    margin: 3% 0;
 }
 .box_list_tittle{
     font-size: 1.2em;
@@ -35,9 +35,16 @@ body{
 .box_list_camp-btn-add:active{
     transform: scale(0.9);
 }
+.box_list_camp-error{
+    display: none;
+    margin: 0 10px;
+    color: var(--cor_box_list_camp-error);
+}
 
 .box_list_itemns{
     margin-top: 20px;
+    max-height: 300px;
+    overflow: auto;
 }
 .box_list_itemns_item{
     display: flex;
@@ -61,4 +68,25 @@ body{
 }
 .box_list_itemns_item-iconDelete:active{
     transform: scale(0.9);
+}
+
+.list_btn{
+    display: flex;
+    flex-direction: column;
+    margin: 3% 0 0 5%;
+}
+.list_btn-create, .list_btn-extras{
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+}
+.list_btn-create{
+    background: var(--cor_list_btn-create);
+
+
+}
+.list_btn-extras{
+    background: var(--cor_list_btn-extras);
 }

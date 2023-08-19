@@ -1,2 +1,2 @@
 const btnBegin = document.querySelector('.box_begin_btn-begin');
-btnBegin.addEventListener('click', () => window.location = 'pages/list.html')
+btnBegin.addEventListener('click', () => window.location = 'pages/list_main.html')

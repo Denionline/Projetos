@@ -9,7 +9,16 @@
     --cor_box_list_camp: white;
     --cor_box_list_camp-btn-add: rgb(72, 72, 230);
     --cor_box_list_itemns_item: rgb(165, 162, 162);
+    --cor_box_list_camp-error: rgb(167, 0, 0);
 
+    --cor_list_btn-create: yellow;
+    --cor_list_btn-extras: orange;
+
+    --box_result: gray;
+    --box_result_item1: rgb(250, 190, 200);
+    --box_result_item2: rgb(240, 154, 168);
+    --box_result_item3: rgb(248, 123, 144);
+    
     /* Fontes */
     --font_box_begin_tittle: 'Special Elite', 'cursive';
 }
