@@ -1,3 +1,5 @@
+const btnBack = document.querySelector('.list_btn-back-list').addEventListener('click', () => window.location = '../pages/list_main.html')
+
 //Primeira lista
 
 const campoInsertText1 = document.querySelector('.box1_list_camp-insertText');

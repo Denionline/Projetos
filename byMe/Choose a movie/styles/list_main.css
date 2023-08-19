@@ -3,16 +3,24 @@ body{
     align-items: start;
     justify-content: center;
 }
+button{
+    text-transform: uppercase;
+    font-family: var(--font_buttons);
+}
 .box_list{
     display: flex;
     flex-direction: column;
     background: var(--cor_box_list);
     width: 70%;
     margin: 3% 0;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 .box_list_tittle{
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 10px auto;
+    font-family: var(--font_box_list_tittle);
+    font-weight: bold;
 }
 .box_list_camp{
     display: flex;
@@ -20,17 +28,29 @@ body{
     background: var(--cor_box_list_camp);
     margin: 0 10px;
     padding: 5px 5px 5px 2px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.651);
 }
 .box_list_camp-insertText{
     width: 90%;
+    margin-left: 5px;
+    background: transparent;
 }
 .box_list_camp-insertText:focus{
     outline: 0;
+}
+.box_list_camp-insertText::placeholder{
+    font-family: var(--font_box_list_itemns_item);
 }
 .box_list_camp-btn-add{
     cursor: pointer;
     padding: 5px;
     background: var(--cor_box_list_camp-btn-add);
+    border-radius: 10px;
+    transition: .3s;
+}
+.box_list_camp-btn-add:hover{
+    box-shadow: inset 0px -1px 2px 0 black;
 }
 .box_list_camp-btn-add:active{
     transform: scale(0.9);
@@ -54,6 +74,13 @@ body{
     margin: 10px;
     padding: 3px 3px 3px 10px;
     border-radius: 10px;
+    border: 1px solid transparent;
+    transition: .2s;
+    font-family: var(--font_box_list_itemns_item);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.753);
+}
+.box_list_itemns_item:hover{
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.753);
 }
 .box_list_itemns_item-name{
     font-size: 1.1em;
@@ -84,9 +111,49 @@ body{
 }
 .list_btn-create{
     background: var(--cor_list_btn-create);
-
-
+    padding: 40px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: .3s;
+    box-shadow: 0 1px 1px 0 black;
+}
+.list_btn-create:hover{
+    transform: scale(1.1);
+    box-shadow: 0 1px 3px 0 black;
+    background: #1f82bfc4;
 }
 .list_btn-extras{
     background: var(--cor_list_btn-extras);
+    transition: .3s;
+    border: 1px solid transparent;
+    border-radius: 50px;
+}
+.list_btn-extras:hover{
+    transform: scale(1.1);
+    border: 1px solid rgba(0, 0, 0, 0.692);
+}
+
+.img_harrySoltandoFeitico, .img_voceSabeQuemSoltandoFeitico{
+    position: absolute;
+    bottom: 0;
+    
+}
+.img_voceSabeQuemSoltandoFeitico{
+    left: 49.88%;
+    height: 100px;
+}
+.img_harrySoltandoFeitico{
+    right: 49.88%;
+    height: 95px;
+}
+
+/* Celular */
+@media (max-width: 500px) {
+    .box_list_camp{
+        flex-direction: column;
+    }
+    .box_list_camp-btn-add{
+        margin-top: 10px;
+        background: #1f82bf80;
+    }
 }

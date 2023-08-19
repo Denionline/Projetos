@@ -1,5 +1,7 @@
 const imgLoading = document.querySelector('.img_loading');
-const caixaResultado = document.querySelector('.box');
+const caixa = document.querySelector('.box');
+const caixaResultado = document.querySelector('.box_result');
+const tituloResultado = document.querySelector('.box_result_tittle');
 
 const campoItem1 = document.querySelector('.box_result_item1');
 const campoItem2 = document.querySelector('.box_result_item2');
@@ -25,8 +27,14 @@ function abrePagina(){
     setTimeout(() => {
         imgLoading.style.width = 0;
         imgLoading.style.height = 0;
-        caixaResultado.style.width = '30%';
-        caixaResultado.style.height = '40%';
+
+        caixa.style.width = '70%';
+        caixa.style.height = '80%';
+
+        caixaResultado.style.width = '90%';
+        caixaResultado.style.height = '90%';
+
+        tituloResultado.style.opacity = '1';
     }, tempoEmSegundosDeCarregamento * 1000)
 }
 function geraItemAleatorio(){

@@ -1,26 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
 
 :root{
     /* Cores */
+    --cor_background: RGB(20, 61, 109);
     --cor_box_begin: gray;
+    --cor_box_begin_tittle: white;
+    --cor_box_begin_btn-begin: transparent;
 
-    --cor_box_list: gray;
-    --cor_box_list_camp: white;
-    --cor_box_list_camp-btn-add: rgb(72, 72, 230);
-    --cor_box_list_itemns_item: rgb(165, 162, 162);
+    --cor_box_list: #f2de795b;
+    --cor_box_list_camp: rgba(255, 255, 255, 0.87);
+    --cor_box_list_camp-btn-add: transparent;
+    --cor_box_list_itemns_item: #f2e5a765;
     --cor_box_list_camp-error: rgb(167, 0, 0);
 
-    --cor_list_btn-create: yellow;
-    --cor_list_btn-extras: orange;
+    --cor_list_btn-create: #1f82bf80;
+    --cor_list_btn-extras: #2493bf00;
 
-    --box_result: gray;
-    --box_result_item1: rgb(250, 190, 200);
-    --box_result_item2: rgb(240, 154, 168);
-    --box_result_item3: rgb(248, 123, 144);
+    --box_result: #143d7381;
+    --box_result_item: #2493bfbb;
     
     /* Fontes */
     --font_box_begin_tittle: 'Special Elite', 'cursive';
+
+    --font_box_list_tittle:'Cinzel Decorative', 'cursive';
+    --font_box_list_itemns_item: 'Special Elite', 'cursive';
+    --font_buttons: 'Rubik Moonrocks', 'cursive';
 }
 
 *{border: 0;padding: 0;margin: 0;}
@@ -37,9 +44,7 @@ div{
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 10px;
+    height: 100vh;
+    width: 100vw;
     z-index: 0;
 }

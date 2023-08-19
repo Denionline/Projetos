@@ -4,16 +4,21 @@ body{
     justify-content: center;
 }
 
+button{
+    text-transform: uppercase;
+    font-family: var(--font_buttons);
+}
+
 /* GIF de carregamento */
 
 .img_loading{
-    display: none;
     position: absolute;
     border-radius: 100%;
     width: 30%;
     height: 40%;
     transition: 1s;
     z-index: 2;
+    display: none;
 }
 
 /* Estilos da página */
@@ -23,6 +28,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* width: 0;
+    height: 0; */
     width: 70%;
     height: 80%;
     transition: 1s;
@@ -33,15 +40,22 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* width: 0;
+    height: 0; */
     width: 90%;
     height: 90%;
-    transition: 2s;
+    border: 1px solid black;
+    border-radius: 50px;
 }
 .box_result_tittle{
     font-size: 2em;
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 7%;
+    /* opacity: 0; */
+    opacity: 1;
+    transition: 2s;
+    font-family: var(--font_box_list_tittle);
 }
 .box_result div{
     width: 90%;
@@ -52,29 +66,50 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 1.6em;
+    font-family: var(--font_box_list_itemns_item);
+    background: var(--box_result_item);
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: .2s;
+    box-shadow: 0 2px 2px 0 black;
 }
-.box_result_item1{
-    background: var(--box_result_item1);
-}
-.box_result_item2{
-    background: var(--box_result_item2);
-}
-.box_result_item3{
-    background: var(--box_result_item3);
+.box_result div:hover{
+    box-shadow: 0 4px 2px 0 black;
 }
 
 /* Botoes da página */
 
 .box button{
     margin-top: 3%;
+    cursor: pointer;
 }
 .box_button-generate-again{
     padding: 15px;
     width: 40%;
+    transition: .3s;
+    background: #10669cc7;
+    border-radius: 20px;
+    color: rgb(235, 234, 234);
+}
+.box_button-generate-again:hover{
+    transform: scale(1.1);
+}
+.box_button-generate-again:active{
+    transform: scale(0.9);
 }
 .box_button-back-list{
     padding: 10px;
     width: 30%;
+    transition: .3s;
+    background: var(--cor_list_btn-extras);
+    border-radius: 20px;
+    color: white;
+}
+.box_button-back-list:hover{
+    transform: scale(1.1);
+}
+.box_button-back-list:active{
+    transform: scale(0.9);
 }
 
 /* Estilos para celular */
@@ -95,5 +130,8 @@ body{
     .box_button-back-list{
         padding: 10px;
         width: 40%;
+    }
+    .box_result_tittle{
+        font-size: 3em;
     }
 }

@@ -3,6 +3,10 @@ body{
     align-items: start;
     justify-content: center;
 }
+button{
+    text-transform: uppercase;
+    font-family: var(--font_buttons);
+}
 
 /* Primeira lista */
 
@@ -12,10 +16,14 @@ body{
     background: var(--cor_box_list);
     width: 35%;
     margin: 3% 0;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 .box1_list_tittle{
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 10px auto;
+    font-family: var(--font_box_list_tittle);
+    font-weight: bold;
 }
 .box1_list_camp{
     display: flex;
@@ -23,17 +31,29 @@ body{
     background: var(--cor_box_list_camp);
     margin: 0 10px;
     padding: 5px 5px 5px 2px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.651);
 }
 .box1_list_camp-insertText{
     width: 90%;
+    margin-left: 5px;
+    background: transparent;
 }
 .box1_list_camp-insertText:focus{
     outline: 0;
+}
+.box1_list_camp-insertText::placeholder{
+    font-family: var(--font_box_list_itemns_item);
 }
 .box1_list_camp-btn-add{
     cursor: pointer;
     padding: 5px;
     background: var(--cor_box_list_camp-btn-add);
+    border-radius: 10px;
+    transition: .3s;
+}
+.box1_list_camp-btn-add:hover{
+    box-shadow: inset 0px -1px 2px 0 black;
 }
 .box1_list_camp-btn-add:active{
     transform: scale(0.9);
@@ -57,6 +77,13 @@ body{
     margin: 10px;
     padding: 3px 3px 3px 10px;
     border-radius: 10px;
+    border: 1px solid transparent;
+    transition: .2s;
+    font-family: var(--font_box_list_itemns_item);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.753);
+}
+.box1_list_itemns_item:hover{
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.753);
 }
 .box1_list_itemns_item-name{
     font-size: 1.1em;
@@ -81,10 +108,14 @@ body{
     background: var(--cor_box_list);
     width: 35%;
     margin: 3% 0 0 3%;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 .box2_list_tittle{
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 10px auto;
+    font-family: var(--font_box_list_tittle);
+    font-weight: bold;
 }
 .box2_list_camp{
     display: flex;
@@ -92,17 +123,29 @@ body{
     background: var(--cor_box_list_camp);
     margin: 0 10px;
     padding: 5px 5px 5px 2px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.651);
 }
 .box2_list_camp-insertText{
     width: 90%;
+    margin-left: 5px;
+    background: transparent;
 }
 .box2_list_camp-insertText:focus{
     outline: 0;
+}
+.box2_list_camp-insertText::placeholder{
+    font-family: var(--font_box_list_itemns_item);
 }
 .box2_list_camp-btn-add{
     cursor: pointer;
     padding: 5px;
     background: var(--cor_box_list_camp-btn-add);
+    border-radius: 10px;
+    transition: .3s;
+}
+.box2_list_camp-btn-add:hover{
+    box-shadow: inset 0px -1px 2px 0 black;
 }
 .box2_list_camp-btn-add:active{
     transform: scale(0.9);
@@ -126,6 +169,13 @@ body{
     margin: 10px;
     padding: 3px 3px 3px 10px;
     border-radius: 10px;
+    border: 1px solid transparent;
+    transition: .2s;
+    font-family: var(--font_box_list_itemns_item);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.753);
+}
+.box2_list_itemns_item:hover{
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.753);
 }
 .box2_list_itemns_item-name{
     font-size: 1.1em;
@@ -148,13 +198,77 @@ body{
     display: flex;
     flex-direction: column;
     margin: 3% 0 0 5%;
-    width: 10%;
+    width: 15%;
+}
+.list_btn-create, .list_btn-back-list{
+    cursor: pointer;
 }
 .list_btn-create{
+    background: var(--cor_list_btn-create);
+    padding: 30px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    transition: .3s;
+    box-shadow: 0 1px 1px 0 black;
     width: 100%;
     margin-bottom: 10px;
-    cursor: pointer;
-    z-index: 1;
+}
+.list_btn-create:hover{
+    transform: scale(1.1);
+    box-shadow: 0 1px 3px 0 black;
+    background: #1f82bfc4;
+}
+.list_btn-create:active{
+    transform: scale(0.9);
+}
+.list_btn-back-list{
+    background: var(--cor_list_btn-extras);
+    transition: .3s;
+    border: 1px solid transparent;
+    border-radius: 50px;
     padding: 10px;
-    background: var(--cor_list_btn-create);
+}
+.list_btn-back-list:hover{
+    transform: scale(1.1);
+    border: 1px solid rgba(0, 0, 0, 0.692);
+}
+.list_btn-back-list:active{
+    transform: scale(0.9);
+}
+
+.img_ronnieSendoSugado{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+}
+
+/* Celular */
+
+@media (max-width: 500px) {
+    .box1_list_camp{
+        flex-direction: column;
+    }
+    .box1_list_camp-btn-add{
+        margin-top: 10px;
+        background: #1f82bf80;
+    }
+    .box2_list_camp{
+        flex-direction: column;
+    }
+    .box2_list_camp-btn-add{
+        margin-top: 10px;
+        background: #1f82bf80;
+    }
+    .img_background{
+        width: 500px;
+        height: 1000px;
+    }
+    .list_btn-create{
+        padding: 3px;
+        font-size: 15px;
+    }
+    .list_btn-back-list{
+        padding: 5px;
+    }
 }
