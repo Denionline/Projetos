@@ -20,7 +20,7 @@ btnBackList.addEventListener('click', () => {
 const btnGenerateAgain = document.querySelector('.box_button-generate-again');
 btnGenerateAgain.addEventListener('click', () => window.location.reload())
 
-// abrePagina();
+abrePagina();
 geraItemAleatorio();
 
 function abrePagina(){
