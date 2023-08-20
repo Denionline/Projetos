@@ -11,7 +11,7 @@ let listaItem1 = JSON.parse(localStorage.getItem('Lista_de_Itens'));
 let listaItem2 = JSON.parse(localStorage.getItem('Lista_de_Itens-1'));
 let listaItem3 = JSON.parse(localStorage.getItem('Lista_de_Itens-2'));
 
-const tempoEmSegundosDeCarregamento = 3;
+const tempoEmSegundosDeCarregamento = 1;
 
 const btnBackList = document.querySelector('.box_button-back-list');
 btnBackList.addEventListener('click', () => {
@@ -42,7 +42,15 @@ function geraItemAleatorio(){
     let resultadoItem2 = listaItem2[0] == null?null:parseInt(Math.random() * (listaItem2.length));
     let resultadoItem3 = listaItem3[0] == null?null:parseInt(Math.random() * (listaItem3.length));
 
-    campoItem1.innerHTML = resultadoItem1 == null?'':listaItem1[resultadoItem1][1];
-    campoItem2.innerHTML = resultadoItem2 == null?'':listaItem2[resultadoItem2][1];
-    campoItem3.innerHTML = resultadoItem3 == null?'':listaItem3[resultadoItem3][1];
+    let spanDoResultado1 = document.createElement('span');
+    let spanDoResultado2 = document.createElement('span');
+    let spanDoResultado3 = document.createElement('span');    
+
+    spanDoResultado1.innerHTML = resultadoItem1 == null?'':listaItem1[resultadoItem1][1];
+    spanDoResultado2.innerHTML = resultadoItem2 == null?'':listaItem2[resultadoItem2][1];
+    spanDoResultado3.innerHTML = resultadoItem3 == null?'':listaItem3[resultadoItem3][1];
+
+    campoItem1.appendChild(spanDoResultado1)
+    campoItem2.appendChild(spanDoResultado2)
+    campoItem3.appendChild(spanDoResultado3)
 }

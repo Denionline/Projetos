@@ -107,6 +107,29 @@ button{
     transform: scale(0.9);
 }
 
+.box_result_item1 span{
+    text-align: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.box_result_item1-img{
+    height: 80%;
+}
+.box_result_item2 span{
+    text-align: center;
+    width: 80%;
+}
+.box_result_item2-img{
+    height: 80%;
+}
+.box_result_item3 span{
+    text-align: center;
+    width: 80%;
+}
+.box_result_item3-img{
+    height: 80%;
+}
+
 /* Estilos para celular */
 
 @media (max-width: 500px) {

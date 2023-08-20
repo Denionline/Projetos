@@ -26,6 +26,9 @@ body{
     z-index: 2;
     transition: .2s;
 }
+
+
+
 .box_begin_tittle:hover{
     transform: scale(1.1);
 }
