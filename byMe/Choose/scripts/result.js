@@ -8,8 +8,8 @@ const campoItem2 = document.querySelector('.box_result_item2');
 const campoItem3 = document.querySelector('.box_result_item3');
 
 let listaItem1 = JSON.parse(localStorage.getItem('Lista_de_Itens'));
-let listaItem2 = JSON.parse(localStorage.getItem('Lista_de_Itens-1'));
-let listaItem3 = JSON.parse(localStorage.getItem('Lista_de_Itens-2'));
+let listaItem2 = localStorage.getItem('Lista_de_Itens-1')?JSON.parse(localStorage.getItem('Lista_de_Itens-1')):null;
+let listaItem3 = localStorage.getItem('Lista_de_Itens-2')?JSON.parse(localStorage.getItem('Lista_de_Itens-2')):null;
 
 const tempoEmSegundosDeCarregamento = 1;
 
@@ -43,8 +43,24 @@ function abrePagina(){
 }
 function geraItemAleatorio(){
     let resultadoItem1 = parseInt(Math.random() * (listaItem1.length));
-    let resultadoItem2 = listaItem2[0] == null?null:parseInt(Math.random() * (listaItem2.length));
-    let resultadoItem3 = listaItem3[0] == null?null:parseInt(Math.random() * (listaItem3.length));
+
+    let resultadoItem2;
+    if(listaItem2 == null){
+        resultadoItem2 = null;
+    }else if(listaItem2[0] == null){
+        resultadoItem2 = null;
+    }else{
+        resultadoItem2 = parseInt(Math.random() * (listaItem2.length));
+    }
+
+    let resultadoItem3;
+    if(listaItem3 == null){
+        resultadoItem3 = null;
+    }else if(listaItem3[0] == null){
+        resultadoItem3 = null;
+    }else{
+        resultadoItem3 = parseInt(Math.random() * (listaItem3.length));
+    }
 
     let spanDoResultado1 = document.createElement('span');
     let spanDoResultado2 = document.createElement('span');
@@ -61,7 +77,6 @@ function geraItemAleatorio(){
     campoItem1.appendChild(spanDoResultado1)
     campoItem2.appendChild(spanDoResultado2)
     campoItem3.appendChild(spanDoResultado3)
-    console.log(listaItem1[resultadoItem1][1])
 }
 
 async function teste(nome){
