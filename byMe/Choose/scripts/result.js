@@ -34,6 +34,10 @@ function abrePagina(){
         caixaResultado.style.width = '90%';
         caixaResultado.style.height = '90%';
 
+        campoItem1.style.opacity = '1';
+        campoItem2.style.opacity = '1';
+        campoItem3.style.opacity = '1';
+
         tituloResultado.style.opacity = '1';
     }, tempoEmSegundosDeCarregamento * 1000)
 }
@@ -50,7 +54,17 @@ function geraItemAleatorio(){
     spanDoResultado2.innerHTML = resultadoItem2 == null?'':listaItem2[resultadoItem2][1];
     spanDoResultado3.innerHTML = resultadoItem3 == null?'':listaItem3[resultadoItem3][1];
 
+    spanDoResultado1.classList.add('box_result_item1-span');
+    spanDoResultado2.classList.add('box_result_item2-span');
+    spanDoResultado3.classList.add('box_result_item3-span');
+
     campoItem1.appendChild(spanDoResultado1)
     campoItem2.appendChild(spanDoResultado2)
     campoItem3.appendChild(spanDoResultado3)
+    console.log(listaItem1[resultadoItem1][1])
+}
+
+async function teste(nome){
+    let con = await obtemAPI(nome);
+    console.log(con);
 }

@@ -16,7 +16,8 @@
     <div class="box_list">
         <span class="box_list_tittle">Lista para Assistir</span>
         <div class="box_list_camp">
-            <input type="text" class="box_list_camp-insertText" placeholder="Digite aqui">
+            <input class="box_list_camp-insertText" placeholder="Digite aqui" list="sugestoes">
+            <datalist id="sugestoes"></datalist>            
             <button class="box_list_camp-btn-add">Adicionar</button>
         </div>
         <div class="box_list_camp-error">Item com esse nome já inserido, insira outro e tente novamente!</div>
@@ -28,10 +29,12 @@
         <button class="list_btn-create">Gerar</button>
         <button class="list_btn-extras">Listas extras</button>
     </div>
-
+    
     <img src="../imgs/voceSabeQuemSoltandoFeitiço.gif" class="img_voceSabeQuemSoltandoFeitico">
     <img src="../imgs/harryPotterSoltandoFeitiço.gif" class="img_harrySoltandoFeitico">
 
+    <script src="../scripts/obtemAPI.js"></script>
+    <script src="../scripts/sugestoesFilmes.js"></script>
     <script src="../scripts/list_main.js"></script>
     <script src="../scripts/list_criar.js"></script>
 </body>

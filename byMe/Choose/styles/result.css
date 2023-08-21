@@ -65,8 +65,9 @@ button{
     background: var(--box_result_item);
     border-radius: 20px;
     border: 1px solid transparent;
-    transition: .2s;
+    transition: .5s;
     box-shadow: 0 2px 2px 0 black;
+    opacity: 0;
 }
 .box_result div:hover{
     box-shadow: 0 4px 2px 0 black;
