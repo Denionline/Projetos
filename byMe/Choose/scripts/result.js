@@ -77,9 +77,30 @@ function geraItemAleatorio(){
     campoItem1.appendChild(spanDoResultado1)
     campoItem2.appendChild(spanDoResultado2)
     campoItem3.appendChild(spanDoResultado3)
-}
 
-async function teste(nome){
-    let con = await obtemAPI(nome);
-    console.log(con);
+    obtemFilme(listaItem1[resultadoItem1][1])
+}
+async function obtemFilme(nome){
+    let filme = await obtemAPI(nome);
+    let urlDaCapa = filme.Search[0].Poster;
+    caixaResultado.style.background = `center / cover no-repeat url(${urlDaCapa})`
+}
+// get()
+async function get(){
+    const url = 'https://moviesminidatabase.p.rapidapi.com/movie/byGen/Adventure/';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '612a23d3c4mshbb508e8aff4cfc3p1139c3jsn0e4fb9b0c203',
+            'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
 }

@@ -19,8 +19,9 @@
     --cor_list_btn-create: #1f82bf80;
     --cor_list_btn-extras: #2493bf00;
 
+    --cor_box_result_tittle: rgb(0, 0, 0);
     --box_result: #143d7381;
-    --box_result_item: #2493bfbb;
+    --box_result_item: #2493bfc7;
     
     /* Fontes */
     --font_box_begin_tittle: 'Special Elite', 'cursive';

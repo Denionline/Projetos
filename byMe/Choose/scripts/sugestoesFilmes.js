@@ -5,7 +5,6 @@ document.querySelector('.box_list_camp-insertText').addEventListener('input',nom
 async function obtemItens(nomeNoInput){
     let API = await obtemAPI(nomeNoInput);
     let lista = API.Search;
-    console.log(lista)
     if(API.Response == 'False'){
         return
     }

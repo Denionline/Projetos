@@ -42,15 +42,21 @@ button{
     height: 0;
     border: 1px solid black;
     border-radius: 50px;
+    z-index: 8;
 }
 .box_result_tittle{
+    color: var(--cor_box_result_tittle);
     font-size: 2em;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: bolder;
     margin-bottom: 10px;
     opacity: 0;
     transition: 2s;
     font-family: var(--font_box_list_tittle);
+    z-index: 5;
+    background-color: rgba(128, 128, 128, 0.486);
+    padding: 10px;
+    border-radius: 50px;
 }
 .box_result div{
     width: 90%;
@@ -68,6 +74,7 @@ button{
     transition: .5s;
     box-shadow: 0 2px 2px 0 black;
     opacity: 0;
+    z-index: 5;
 }
 .box_result div:hover{
     box-shadow: 0 4px 2px 0 black;
@@ -130,6 +137,7 @@ button{
 .box_result_item3-img{
     height: 80%;
 }
+
 
 /* Estilos para celular */
 
