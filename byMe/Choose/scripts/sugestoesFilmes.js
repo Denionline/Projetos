@@ -1,6 +1,6 @@
 const listaDeSugestoes = document.querySelector('#sugestoes');
 
-document.querySelector('.box_list_camp-insertText').addEventListener('input',nomeNoInput => obtemItens(nomeNoInput))
+document.querySelector('.box_list_camp-insertText').addEventListener('input',nomeNoInput => obtemItens(nomeNoInput.target.value))
 
 async function obtemItens(nomeNoInput){
     let API = await obtemAPI(nomeNoInput);

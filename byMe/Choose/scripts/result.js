@@ -28,17 +28,28 @@ function abrePagina(){
         imgLoading.style.width = 0;
         imgLoading.style.height = 0;
 
-        caixa.style.width = '70%';
-        caixa.style.height = '80%';
+        if(window.screen.width <= 500){
+            caixa.style.width = '100%';
+            caixa.style.height = '100%';
+        }else if(window.screen.width <= 800){
+            caixa.style.width = '60%';
+            caixa.style.height = '95%';
+        }else if(window.screen.width <= 1200){
+            caixa.style.width = '40%';
+            caixa.style.height = '90%';
+        }else{
+            caixa.style.width = '30%';
+            caixa.style.height = '90%';
+        }
 
-        caixaResultado.style.width = '90%';
-        caixaResultado.style.height = '90%';
+        caixaResultado.style.width = '100%';
+        caixaResultado.style.height = '100%';
 
         campoItem1.style.opacity = '1';
         campoItem2.style.opacity = '1';
         campoItem3.style.opacity = '1';
 
-        tituloResultado.style.opacity = '1';
+        // tituloResultado.style.opacity = '1';
     }, tempoEmSegundosDeCarregamento * 1000)
 }
 function geraItemAleatorio(){
@@ -79,28 +90,18 @@ function geraItemAleatorio(){
     campoItem3.appendChild(spanDoResultado3)
 
     obtemFilme(listaItem1[resultadoItem1][1])
+    // getIdMovie(listaItem1[resultadoItem1][1])
 }
 async function obtemFilme(nome){
     let filme = await obtemAPI(nome);
+    if(filme.Response == 'False'){
+        return
+    }
     let urlDaCapa = filme.Search[0].Poster;
     caixaResultado.style.background = `center / cover no-repeat url(${urlDaCapa})`
 }
-// get()
-async function get(){
-    const url = 'https://moviesminidatabase.p.rapidapi.com/movie/byGen/Adventure/';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '612a23d3c4mshbb508e8aff4cfc3p1139c3jsn0e4fb9b0c203',
-            'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com'
-        }
-    };
-    
-    try {
-        const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
-}
+
+campoItem1.addEventListener('click', () => {
+    campoItem1.style.position = 'absolute';
+    campoItem1.style.height = '90%';
+})
