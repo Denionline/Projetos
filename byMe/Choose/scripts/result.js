@@ -28,7 +28,7 @@ function abrePagina(){
         imgLoading.style.width = 0;
         imgLoading.style.height = 0;
 
-        if(window.screen.width <= 500){
+        if(window.screen.width <= 600){
             caixa.style.width = '100%';
             caixa.style.height = '100%';
         }else if(window.screen.width <= 800){
@@ -38,7 +38,7 @@ function abrePagina(){
             caixa.style.width = '40%';
             caixa.style.height = '90%';
         }else{
-            caixa.style.width = '30%';
+            caixa.style.width = '35%';
             caixa.style.height = '90%';
         }
 
