@@ -135,6 +135,10 @@ button{
     height: 50%;
 }
 
+.img_mostra-filme{
+    height: 50%;
+}
+
 /* Estilos para celular */
 
 @media (max-width: 600px) {

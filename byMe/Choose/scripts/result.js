@@ -90,7 +90,7 @@ function geraItemAleatorio(){
     campoItem3.appendChild(spanDoResultado3)
 
     obtemFilme(listaItem1[resultadoItem1][1])
-    // getIdMovie(listaItem1[resultadoItem1][1])
+    // filme = getIdMovie(listaItem1[resultadoItem1][1]);
 }
 async function obtemFilme(nome){
     let filme = await obtemAPI(nome);
@@ -102,6 +102,15 @@ async function obtemFilme(nome){
 }
 
 campoItem1.addEventListener('click', () => {
-    campoItem1.style.position = 'absolute';
-    campoItem1.style.height = '90%';
+    const nomeDoFilme = campoItem1.children[1].innerHTML;
+    dadosFilme(nomeDoFilme)
 })
+
+async function dadosFilme(nomeDoFilme){
+    campoItem1.style.position = 'absolute';
+    campoItem1.style.height = '80%';
+    campoItem1.innerHTML = '';
+    let filme = await getIdMovie(nomeDoFilme);
+    campoItem1.innerHTML += `<img src="${filme.results.banner}" class="img_mostra-filme">`
+    console.log(filme.results.banner)
+}

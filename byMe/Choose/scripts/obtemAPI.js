@@ -18,7 +18,7 @@ async function getIdMovie(nome){
         const response = await fetch(url, options);
         const result = await response.text();
         let resultTranslate = JSON.parse(result)
-        getMovieByID(resultTranslate.results[0].imdb_id);
+        return getMovieByID(resultTranslate.results[0].imdb_id);
     } catch (error) {
         console.error(error);
     }
@@ -37,7 +37,8 @@ async function getMovieByID(ID){
     try {
         const response = await fetch(url, options);
         const result = await response.text();
-        console.log(JSON.parse(result));
+        const resultTranslate = await JSON.parse(result)
+        return resultTranslate;
     } catch (error) {
         console.error(error);
     }
