@@ -43,3 +43,23 @@ async function getMovieByID(ID){
         console.error(error);
     }
 }
+
+async function getMoviesByGenre(genero){
+    const url = `https://moviesminidatabase.p.rapidapi.com/movie/byGen/${genero}/`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '612a23d3c4mshbb508e8aff4cfc3p1139c3jsn0e4fb9b0c203',
+            'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        const resultTranslate = await JSON.parse(result)
+        return resultTranslate;
+    } catch (error) {
+        console.error(error);
+    }
+}

@@ -58,7 +58,7 @@ button{
     padding: 10px;
     border-radius: 50px;
 }
-.box_result div{
+.box_result_item1, .box_result_item2, .box_result_item3{
     width: 90%;
     height: 15%;
     margin-bottom: 5%;
@@ -76,7 +76,7 @@ button{
     opacity: 0;
     z-index: 3;
 }
-.box_result div:hover{
+.box_result_item1:hover, .box_result_item2:hover, .box_result_item3:hover{
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.774);
 }
 
@@ -134,9 +134,34 @@ button{
 .box_result_item1-img, .box_result_item2-img, .box_result_item3-img{
     height: 50%;
 }
-
-.img_mostra-filme{
+.mostra_filme{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 1;
+}
+.mostra-filme_title{
+    width: 60%;
+}
+.mostra-filme_description{
+    width: 50%;
+    height: 40%;
+    font-size: 12px;
+}
+.mostra-filme_img{
     height: 50%;
+}
+.mostra-filme_generos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50%;
+    width: 165px;
+}
+.mostra-filme_img-genero{
+    height: 80px;
+    width: 50px;
+    margin-left: 5px;
 }
 
 /* Estilos para celular */

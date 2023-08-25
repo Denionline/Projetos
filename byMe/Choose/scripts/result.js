@@ -102,15 +102,36 @@ async function obtemFilme(nome){
 }
 
 campoItem1.addEventListener('click', () => {
+    if(window.screen.width <= 600){
+        return;
+    }
+    if(campoItem1.classList.contains('mostra_filme')){
+        return;
+    }
     const nomeDoFilme = campoItem1.children[1].innerHTML;
     dadosFilme(nomeDoFilme)
 })
 
 async function dadosFilme(nomeDoFilme){
-    campoItem1.style.position = 'absolute';
+
+    campoItem1.classList.add('mostra_filme');
+    
     campoItem1.style.height = '80%';
     campoItem1.innerHTML = '';
-    let filme = await getIdMovie(nomeDoFilme);
-    campoItem1.innerHTML += `<img src="${filme.results.banner}" class="img_mostra-filme">`
-    console.log(filme.results.banner)
+
+    const filme = await getIdMovie(nomeDoFilme);
+    campoItem1.innerHTML += `<div class="mostra-filme_title">${filme.results.title}</div>`
+    campoItem1.innerHTML += `<img src="${filme.results.banner}" class="mostra-filme_img">`;
+    campoItem1.innerHTML += `<div class="mostra-filme_description">${filme.results.description}</div>`;
+
+
+    const generos = filme.results.gen;
+    const filmesDoGenero = await getMoviesByGenre(generos[parseInt(Math.random()*generos.length)].genre);
+    campoItem1.innerHTML += `<div class="mostra-filme_generos"></div>`;
+    const campoSugestoes = document.querySelector('.mostra-filme_generos');
+    for(i=0;i<6;i++){
+        let filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id)
+        campoSugestoes.innerHTML += `<img src="${filmeDoGenero.results.banner}" class="mostra-filme_img-genero">`;
+    }
+    // description
 }
