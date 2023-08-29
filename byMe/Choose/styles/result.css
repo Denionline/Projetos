@@ -114,55 +114,81 @@ button{
 .box_button-back-list:active{
     transform: scale(0.9);
 }
-.box_result_item1 span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    width: 80%;
-    height: 100%;
-}
-.box_result_item2 span{
+.box_result_item1-span{
     text-align: center;
     width: 80%;
 }
-.box_result_item3 span{
+.box_result_item2-span{
+    text-align: center;
+    width: 80%;
+}
+.box_result_item3-span{
     text-align: center;
     width: 80%;
 }
 .box_result_item1-img, .box_result_item2-img, .box_result_item3-img{
     height: 50%;
 }
-.mostra_filme{
-    position: absolute;
+
+
+
+
+
+.caixa_info-filme{
     display: flex;
-    flex-wrap: wrap;
-    opacity: 1;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 50px;
 }
-.mostra-filme_title{
-    width: 60%;
+.caixa_info-filme_informacoes{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
 }
-.mostra-filme_description{
-    width: 50%;
-    height: 40%;
-    font-size: 12px;
+
+.caixa_info-filme_informacoes-titulo, .caixa_info-filme_informacoes-nota, .caixa_info-filme_informacoes-generos, .caixa_info-filme_informacoes-descricao{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
 }
-.mostra-filme_img{
-    height: 50%;
+.caixa_info-filme_informacoes-titulo-1, .caixa_info-filme_informacoes-nota-1, .caixa_info-filme_informacoes-generos-1, .caixa_info-filme_informacoes-descricao-1{
+    text-align: start;
+    flex: 1;
+    margin-right: 10px;
 }
-.mostra-filme_generos{
+.caixa_info-filme_informacoes-titulo{
+    font-size: 2em;
+    font-weight: bold;
+}
+.caixa_info-filme_informacoes-titulo-2, .caixa_info-filme_informacoes-nota-2, .caixa_info-filme_informacoes-generos-2, .caixa_info-filme_informacoes-descricao-2{
+    text-align: start;
+    flex: 2 1 100%;
+}
+
+.caixa_info-filme_banner{
+    height: 300px;
+    margin: 0 10px;
+}
+
+/* .mostra-filme_generos{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    height: 50%;
-    width: 165px;
-}
-.mostra-filme_img-genero{
+    align-content: center;
+    align-content: space-around;
+    height: 200px;
+    width: 180px;
+} */
+/* .mostra-filme_img-genero{
     height: 80px;
     width: 50px;
     margin-left: 5px;
-}
+} */
 
 /* Estilos para celular */
 

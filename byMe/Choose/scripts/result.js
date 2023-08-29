@@ -112,26 +112,67 @@ campoItem1.addEventListener('click', () => {
     dadosFilme(nomeDoFilme)
 })
 
-async function dadosFilme(nomeDoFilme){
-
-    campoItem1.classList.add('mostra_filme');
-    
+async function dadosFilme(nomeDoFilme){    
     campoItem1.style.height = '80%';
+    campoItem1.style.position = 'absolute';
     campoItem1.innerHTML = '';
 
     const filme = await getIdMovie(nomeDoFilme);
-    campoItem1.innerHTML += `<div class="mostra-filme_title">${filme.results.title}</div>`
-    campoItem1.innerHTML += `<img src="${filme.results.banner}" class="mostra-filme_img">`;
-    campoItem1.innerHTML += `<div class="mostra-filme_description">${filme.results.description}</div>`;
 
+    // campoItem1.innerHTML += `<div class="mostra-filme_title">${filme.results.title}</div>`
+    // campoItem1.innerHTML += `<img src="${filme.results.banner}" class="mostra-filme_img">`;
+    // campoItem1.innerHTML += `<div class="mostra-filme_description">${filme.results.description}</div>`;
 
     const generos = filme.results.gen;
     const filmesDoGenero = await getMoviesByGenre(generos[parseInt(Math.random()*generos.length)].genre);
-    campoItem1.innerHTML += `<div class="mostra-filme_generos"></div>`;
-    const campoSugestoes = document.querySelector('.mostra-filme_generos');
-    for(i=0;i<6;i++){
-        let filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id)
-        campoSugestoes.innerHTML += `<img src="${filmeDoGenero.results.banner}" class="mostra-filme_img-genero">`;
+    let nomeDosGeneros = '';
+    for(i=0;i<generos.length;i++){
+        if(i == (generos.length - 1)){
+            nomeDosGeneros += `${generos[i].genre}.`
+        }else{
+            nomeDosGeneros += `${generos[i].genre}, `
+        }
+        
     }
+
+    campoItem1.innerHTML += `
+        <div class="caixa_info-filme">
+            <div class="caixa_info-filme_informacoes" >
+                <div class="caixa_info-filme_informacoes-titulo">
+                    <span class="caixa_info-filme_informacoes-titulo-1">Título: </span>
+                    <span class="caixa_info-filme_informacoes-titulo-2">${filme.results.title}</span>
+                </div>
+                <div class="caixa_info-filme_informacoes-nota">
+                    <span class="caixa_info-filme_informacoes-nota-1">Avaliação: </span>
+                    <span class="caixa_info-filme_informacoes-nota-2">${filme.results.rating}</span>
+                </div>
+                <div class="caixa_info-filme_informacoes-generos">
+                    <span class="caixa_info-filme_informacoes-generos-1">Gêneros: </span>
+                    <span class="caixa_info-filme_informacoes-generos-2">${nomeDosGeneros}</span>
+                </div>
+                <div class="caixa_info-filme_informacoes-descricao">
+                    <span class="caixa_info-filme_informacoes-descricao-1">Descrição: </span>
+                    <span class="caixa_info-filme_informacoes-descricao-2">${filme.results.description}</span>
+            </div>
+            </div>
+            <img src="${filme.results.banner}" class="caixa_info-filme_banner">
+            <div class="caixa_info-filme_img-genero">
+                
+            </div>
+        </div>
+    `
+
+    // campoItem1.innerHTML += `
+    //     <div class="mostra-filme_generos">
+
+    //     </div>
+    // `;
+
+
+    // const campoSugestoes = document.querySelector('.mostra-filme_generos');
+    // for(i=0;i<6;i++){
+    //     let filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id)
+    //     campoSugestoes.innerHTML += `<img src="${filmeDoGenero.results.banner}" class="mostra-filme_img-genero">`;
+    // }
     // description
 }
