@@ -12,6 +12,8 @@ let listaItem2 = localStorage.getItem('Lista_de_Itens-1')?JSON.parse(localStorag
 let listaItem3 = localStorage.getItem('Lista_de_Itens-2')?JSON.parse(localStorage.getItem('Lista_de_Itens-2')):null;
 
 const tempoEmSegundosDeCarregamento = 1;
+let imgsSugestoes = document.querySelectorAll('.caixa_info-filme_img-genero');
+let iconClose = document.querySelector('.icon-x');
 
 const btnBackList = document.querySelector('.box_button-back-list');
 btnBackList.addEventListener('click', () => {
@@ -85,6 +87,7 @@ function geraItemAleatorio(){
     spanDoResultado2.classList.add('box_result_item2-span');
     spanDoResultado3.classList.add('box_result_item3-span');
 
+    campoItem1.id = listaItem1[resultadoItem1][1];
     campoItem1.appendChild(spanDoResultado1)
     campoItem2.appendChild(spanDoResultado2)
     campoItem3.appendChild(spanDoResultado3)
@@ -105,8 +108,10 @@ campoItem1.addEventListener('click', () => {
     if(window.screen.width <= 750){
         return;
     }
-    if(campoItem1.children[0].classList.contains('caixa_info-filme')){
-        return; 
+    iconClose = document.querySelector('.icon-x');
+    click()
+    if(document.querySelector('.caixa_info-filme')){
+        return;
     }
     const nomeDoFilme = campoItem1.children[1].innerHTML;
     dadosFilme(nomeDoFilme)
@@ -162,47 +167,34 @@ async function dadosFilme(nomeDoFilme){
     const campoSugestoes = document.querySelector('.caixa_info-filme_img-generos');
     for(i=0;i<6;i++){
         let filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id)
-        campoSugestoes.innerHTML += `<img src="${filmeDoGenero.results.banner}" class="caixa_info-filme_img-genero">`;
+        campoSugestoes.innerHTML += `<img src="${filmeDoGenero.results.banner}" id="${filmeDoGenero.results.title}" class="caixa_info-filme_img-genero">`;
+    }
+
+    imgsSugestoes = document.querySelectorAll('.caixa_info-filme_img-genero');
+    iconClose = document.querySelector('.icon-x');
+    click();
+}
+
+
+
+click();
+function click(){
+    imgsSugestoes.forEach(img => {
+        img.addEventListener('click', imgSugestao => {
+            dadosFilme(imgSugestao.target.id)
+        })
+    })
+    if(document.querySelector('.caixa_info-filme')){
+        iconClose.addEventListener('click', () => {
+            fechaInfoFilme()
+        })
     }
 }
 
-// btnClose.addEventListener('click', () => {
-//     campoItem1.innerHTML = '';
-//     campoItem1.style.height = '15%';
-//     campoItem1.style.position = 'relative';
-//     campoItem1.innerHTML = '<img src="../imgs/takeFilme.png" class="box_result_item1-img">'
-//     campoItem1.innerHTML += campoItem1.children[1].innerHTML;
-// })
-
-
-// campoItem1.innerHTML += `
-// <div class="caixa_info-filme">
-//     <div class="caixa_info-filme_informacoes" >
-//         <div class="caixa_info-filme_informacoes-titulo">
-//             <span class="caixa_info-filme_informacoes-titulo-1">Título: </span>
-//             <span class="caixa_info-filme_informacoes-titulo-2">Moana</span>
-//         </div>
-//         <div class="caixa_info-filme_informacoes-nota">
-//             <span class="caixa_info-filme_informacoes-nota-1">Avaliação: </span>
-//             <span class="caixa_info-filme_informacoes-nota-2">7.6</span>
-//         </div>
-//         <div class="caixa_info-filme_informacoes-generos">
-//             <span class="caixa_info-filme_informacoes-generos-1">Gêneros: </span>
-//             <span class="caixa_info-filme_informacoes-generos-2">Adventure, Family, Fantasy, Comedy, Animation, Musical.</span>
-//         </div>
-//         <div class="caixa_info-filme_informacoes-descricao">
-//             <span class="caixa_info-filme_informacoes-descricao-1">Descrição: </span>
-//             <span class="caixa_info-filme_informacoes-descricao-2">Moana Waialiki is a sea voyaging enthusiast and the only daughter of a chief in a long line of navigators. When her island's fishermen can't catch any fish and the crops fail, she learns that the demigod Maui caused the blight by stealing the heart of the goddess, Te Fiti. The only way to heal the island is to persuade Maui to return Te Fiti's heart, so Moana sets off on an epic journey across the Pacific. The film is based on stories from Polynesian mythology.</span>
-//     </div>
-//     </div>
-//     <img src="https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_.jpg" class="caixa_info-filme_banner">
-// </div>
-// <div class="caixa_info-filme_img-generos">
-//     <img src="https://m.media-amazon.com/images/M/MV5BZmU0ZTQ1OWYtOTcyMi00OWVmLWJkNmEtY2I5OGEwYTJmM2Q1XkEyXkFqcGdeQXVyNDM1Nzc0MTI@._V1_.jpg" class="caixa_info-filme_img-genero">
-//     <img src="https://m.media-amazon.com/images/M/MV5BYWVkMWEyMDUtZTVmOC00MTYxLWE1ZTUtNjk4M2IzMjY2OTIxXkEyXkFqcGdeQXVyMDk5Mzc5MQ@@._V1_.jpg" class="caixa_info-filme_img-genero">
-//     <img src="https://m.media-amazon.com/images/M/MV5BMWQ3N2EzNjYtMzgwYS00YjdmLThmOTUtMzc4NDUxZjZkY2RhXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" class="caixa_info-filme_img-genero">
-//     <img src="https://m.media-amazon.com/images/M/MV5BYWVhZjZkYTItOGIwYS00NmRkLWJlYjctMWM0ZjFmMDU4ZjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" class="caixa_info-filme_img-genero">
-//     <img src="https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_.jpg" class="caixa_info-filme_img-genero">
-//     <img src="https://m.media-amazon.com/images/M/MV5BNjY0YzYwM2YtMzcyOC00YmFjLTgxMzEtNzg0YjEwYjlhY2I5XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg" class="caixa_info-filme_img-genero">
-// </div>
-// `
+function fechaInfoFilme(){
+    campoItem1.innerHTML = '';
+    campoItem1.style.height = '15%';
+    campoItem1.style.position = 'relative';
+    campoItem1.innerHTML += '<img src="../imgs/takeFilme.png" class="box_result_item1-img">'
+    campoItem1.innerHTML += `<span class="box_result_item1-span">${campoItem1.id}</span>`
+}

@@ -157,6 +157,7 @@ button{
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
+    height: 100%;
 }
 .caixa_info-filme_informacoes-titulo-1, .caixa_info-filme_informacoes-nota-1, .caixa_info-filme_informacoes-generos-1, .caixa_info-filme_informacoes-descricao-1{
     text-align: start;
@@ -170,6 +171,17 @@ button{
 .caixa_info-filme_informacoes-titulo-2, .caixa_info-filme_informacoes-nota-2, .caixa_info-filme_informacoes-generos-2, .caixa_info-filme_informacoes-descricao-2{
     text-align: start;
     flex: 2 1 100%;
+}
+.caixa_info-filme_informacoes-descricao-2:active{
+    position: absolute;
+    background: #042e4ded;
+    height: 60%;
+    top: 10px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.548);
+    color: white;
+    padding: 10px;
 }
 
 .caixa_info-filme_banner{
