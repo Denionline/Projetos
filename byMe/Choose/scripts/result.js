@@ -92,10 +92,9 @@ function geraItemAleatorio(){
     campoItem2.appendChild(spanDoResultado2)
     campoItem3.appendChild(spanDoResultado3)
 
-    obtemFilme(listaItem1[resultadoItem1][1])
-    // filme = getIdMovie(listaItem1[resultadoItem1][1]);
+    obtemBannerPrincipal(listaItem1[resultadoItem1][1])
 }
-async function obtemFilme(nome){
+async function obtemBannerPrincipal(nome){
     let filme = await obtemAPI(nome);
     if(filme.Response == 'False'){
         return
@@ -108,12 +107,11 @@ campoItem1.addEventListener('click', () => {
     if(window.screen.width <= 750){
         return;
     }
-    iconClose = document.querySelector('.icon-x');
-    click()
-    if(document.querySelector('.caixa_info-filme')){
+    if(campoItem1.style.position == 'absolute' && campoItem1.style.height > '50%'){
         return;
     }
-    const nomeDoFilme = campoItem1.children[1].innerHTML;
+    let nomeDoFilme = document.querySelector('.caixa_info-filme')?null:campoItem1.children[1].innerHTML;
+    console.log('abrirInfo');
     dadosFilme(nomeDoFilme)
 })
 
@@ -121,8 +119,8 @@ async function dadosFilme(nomeDoFilme){
     campoItem1.style.height = '85%';
     campoItem1.style.position = 'absolute';
     campoItem1.innerHTML = '';
+    
     const filme = await getIdMovie(nomeDoFilme);
-
     const generos = filme.results.gen;
     const filmesDoGenero = await getMoviesByGenre(generos[parseInt(Math.random()*generos.length)].genre);
     let nomeDosGeneros = '';
@@ -162,39 +160,40 @@ async function dadosFilme(nomeDoFilme){
                 
         </div>
     `
-
-    console.log(filme)
+    
     const campoSugestoes = document.querySelector('.caixa_info-filme_img-generos');
     for(i=0;i<6;i++){
-        let filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id)
+        let filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id);
+        while(document.getElementById(filmeDoGenero.results.title)){
+            filmeDoGenero = await getMovieByID(filmesDoGenero.results[parseInt(Math.random()*filmesDoGenero.results.length)].imdb_id);
+        }
         campoSugestoes.innerHTML += `<img src="${filmeDoGenero.results.banner}" id="${filmeDoGenero.results.title}" class="caixa_info-filme_img-genero">`;
     }
-
-    imgsSugestoes = document.querySelectorAll('.caixa_info-filme_img-genero');
+    
     iconClose = document.querySelector('.icon-x');
-    click();
-}
+    imgsSugestoes = document.querySelectorAll('.caixa_info-filme_img-genero');
 
-
-
-click();
-function click(){
+    iconClose.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('click');
+        fechaInfoFilme();
+        return;
+    })
     imgsSugestoes.forEach(img => {
         img.addEventListener('click', imgSugestao => {
             dadosFilme(imgSugestao.target.id)
         })
     })
-    if(document.querySelector('.caixa_info-filme')){
-        iconClose.addEventListener('click', () => {
-            fechaInfoFilme()
-        })
-    }
 }
 
 function fechaInfoFilme(){
-    campoItem1.innerHTML = '';
-    campoItem1.style.height = '15%';
-    campoItem1.style.position = 'relative';
-    campoItem1.innerHTML += '<img src="../imgs/takeFilme.png" class="box_result_item1-img">'
-    campoItem1.innerHTML += `<span class="box_result_item1-span">${campoItem1.id}</span>`
+    iconClose = null;
+    imgsSugestoes = null;
+    setTimeout(() => {    
+        campoItem1.innerHTML = '';
+        campoItem1.style.height = '15%';
+        campoItem1.style.position = 'relative';
+        campoItem1.innerHTML += '<img src="../imgs/takeFilme.png" class="box_result_item1-img">'
+        campoItem1.innerHTML += `<span class="box_result_item1-span">${campoItem1.id}</span>`
+    }, 50)
 }

@@ -170,7 +170,7 @@ button{
 }
 .caixa_info-filme_informacoes-titulo-2, .caixa_info-filme_informacoes-nota-2, .caixa_info-filme_informacoes-generos-2, .caixa_info-filme_informacoes-descricao-2{
     text-align: start;
-    flex: 2 1 100%;
+    flex: 2 1 90%;
 }
 .caixa_info-filme_informacoes-descricao-2:active{
     position: absolute;
