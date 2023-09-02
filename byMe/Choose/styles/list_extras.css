@@ -2,6 +2,7 @@ body{
     display: flex;
     align-items: start;
     justify-content: center;
+    flex-wrap: wrap;
 }
 button{
     text-transform: uppercase;
@@ -14,7 +15,7 @@ button{
     display: flex;
     flex-direction: column;
     background: var(--cor_box_list);
-    width: 35%;
+    width: 45%;
     margin: 3% 0;
     border: 1px solid black;
     border-radius: 20px;
@@ -106,7 +107,7 @@ button{
     display: flex;
     flex-direction: column;
     background: var(--cor_box_list);
-    width: 35%;
+    width: 45%;
     margin: 3% 0 0 3%;
     border: 1px solid black;
     border-radius: 20px;
@@ -198,25 +199,22 @@ button{
     display: flex;
     flex-direction: column;
     margin: 3% 0 0 5%;
-    width: 15%;
+    width: 40%;
 }
 .list_btn-create, .list_btn-back-list{
     cursor: pointer;
 }
 .list_btn-create{
     background: var(--cor_list_btn-create);
-    padding: 30px;
-    border-radius: 50px;
+    padding: 40px;
+    border-radius: 10px;
     font-size: 1.2em;
     transition: .3s;
-    box-shadow: 0 1px 1px 0 black;
-    width: 100%;
-    margin-bottom: 10px;
+    box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.623);
 }
 .list_btn-create:hover{
-    transform: scale(1.1);
-    box-shadow: 0 1px 3px 0 black;
-    background: #1f82bfc4;
+    transform: translate(0, -3px);
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.829);
 }
 .list_btn-create:active{
     transform: scale(0.9);
@@ -225,12 +223,13 @@ button{
     background: var(--cor_list_btn-extras);
     transition: .3s;
     border: 1px solid transparent;
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 10px;
+    margin-top: 10px;
 }
 .list_btn-back-list:hover{
-    transform: scale(1.1);
-    border: 1px solid rgba(0, 0, 0, 0.692);
+    transform: translate(0, 3px);
+    box-shadow: 0px -5px 4px 1px rgba(0, 0, 0, 0.514);
 }
 .list_btn-back-list:active{
     transform: scale(0.9);
@@ -240,7 +239,7 @@ button{
     position: absolute;
     right: 0;
     bottom: 0;
-    height: 200px;
+    height: 100px;
 }
 
 /* Celular */
@@ -259,16 +258,5 @@ button{
     .box2_list_camp-btn-add{
         margin-top: 10px;
         background: #1f82bf80;
-    }
-    .img_background{
-        width: 500px;
-        height: 1000px;
-    }
-    .list_btn-create{
-        padding: 3px;
-        font-size: 15px;
-    }
-    .list_btn-back-list{
-        padding: 5px;
     }
 }
