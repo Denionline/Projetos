@@ -51,7 +51,6 @@ function abrePagina(){
         campoItem2.style.opacity = '1';
         campoItem3.style.opacity = '1';
 
-        // tituloResultado.style.opacity = '1';
     }, tempoEmSegundosDeCarregamento * 1000)
 }
 function geraItemAleatorio(){

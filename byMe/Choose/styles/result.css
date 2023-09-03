@@ -245,6 +245,30 @@ button{
 
 /* Estilos para celular */
 
+@media (max-width: 1500px) {
+    .img_loading{
+        width: 40%;
+        height: 50%;
+    }
+}
+@media (max-width: 1200px) {
+    .img_loading{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media (max-width: 1000px) {
+    .img_loading{
+        width: 60%;
+        height: 50%;
+    }
+}
+@media (max-width: 800px) {
+    .img_loading{
+        width: 60%;
+        height: 50%;
+    }
+}
 @media (max-width: 600px) {
     .box_result_tittle{
         font-size: 1em;
@@ -276,21 +300,4 @@ button{
         height: 40%;
     }
 }
-@media (max-width: 800px) {
-    .img_loading{
-        width: 70%;
-        height: 50%;
-    }
-}
-@media (max-width: 1200px) {
-    .img_loading{
-        width: 60%;
-        height: 50%;
-    }
-}
-@media (max-width: 1500px) {
-    .img_loading{
-        width: 30%;
-        height: 50%;
-    }
-}
+
