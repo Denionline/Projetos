@@ -1,0 +1,28 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Teste de package com node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test2": "cls && echo 'Hello World!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Denionline/TestsNode.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Daniel Ximenes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Denionline/TestsNode/issues"
+  },
+  "homepage": "https://github.com/Denionline/TestsNode#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
