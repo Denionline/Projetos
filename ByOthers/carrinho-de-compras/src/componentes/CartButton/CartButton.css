@@ -9,6 +9,7 @@
   position: relative;
   margin-left: 20px;
   color: #333;
+  cursor: pointer;
 }
 
 .cart-status{
