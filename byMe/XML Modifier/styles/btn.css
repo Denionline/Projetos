@@ -1,0 +1,38 @@
+.caixaBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+#btnToXML{
+    background-color: gray;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: .2s;
+}
+#btnToXML:hover{
+    background-color: rgba(158, 157, 157, 0.845)
+}
+#btnToXML:active{
+    transform: scale(0.9);
+}
+
+#btnToDeleteObj{
+    background-color: rgb(195, 25, 25);
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: .2s;
+}
+#btnToDeleteObj:hover{
+    background-color: rgb(190, 45, 45);
+}
+#btnToDeleteObj:active{
+    transform: scale(0.9);
+}

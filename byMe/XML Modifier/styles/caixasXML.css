@@ -1,0 +1,247 @@
+.caixaInputXML{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+    transition: .3s;
+    margin-bottom: 10px;
+    width: 80%;
+}
+#fileXML{
+    font-size: 2em;
+    cursor: pointer;
+}
+.caixaInputXML:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 1);
+}
+/* ---------- Caixa onde será manipulado o XML ---------- */
+.box{
+    flex-direction: column;
+    background: var(--cor-de-fundo-box);
+    padding: 10px;
+    border-radius: 10px;
+    width: 95%;
+    height: 80%;
+    box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.54);
+}
+/* ---------- Parte no topo da caixa ---------- */
+.box_top{
+    display: flex;
+    justify-content: space-between;
+    background: var(--cor-de-fundo-box_top);
+    border-bottom: 1px solid black;
+}
+.box_top > div{
+    position: relative;
+}
+.box_top_item{
+    text-align: center;
+}
+.box_top_item_descricao{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: var(--font-titulos);
+}
+.box_top_item_valor{
+    padding: 5px;
+    text-align: center;
+    background: transparent;
+}
+.box_body{
+    background: var(--cor-de-fundo-box_body);
+    overflow: auto;
+}
+/* ---------- Mostrar lápis ---------- */
+.box_top_item_valor:hover ~ .icon-pencil{
+    display: block;
+}
+/* ---------- Parte onde mostrará as guias ---------- */
+.box_body_guia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* box-shadow: 0px 1px 3px 1px black; */
+    border-radius: 20px;
+    background: var(--cor-de-fundo-guia);
+    padding: 10px;
+    width: 95%;
+    margin: 10px auto;
+    transition: .2s;
+}
+.box_body_guia:hover{
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.718);
+    transform: translate(0, -1px);
+}
+/* ---------- Resumo da Guia ---------- */
+.box_body_guia_resumo{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    background: var(--cor-de-fundo-resumo);
+    padding: 10px 5px 20px 5px;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+}
+.box_body_guia_resumo > div {
+    display: flex;
+    position: relative;
+    margin: 5px 30px 0 5px;
+    border: 1px solid black;
+    padding: 2px;
+    background: white;
+}
+.box_body_guia_resumo_descricao{
+    font-weight: bold;
+    margin-right: 5px;
+}
+.box_body_guia_resumo_valor{
+    outline: 0;
+    background: transparent;
+    text-align: center;
+}
+/* ---------- Mostrar lápis ---------- */
+.box_body_guia_resumo_valor:hover ~ .icon-pencil{
+    display: block;
+}
+/* ---------- Procedimentos da Guia ---------- */
+.box_body_guia_detalhes{
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-de-fundo-detalhes);
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0px black;
+}
+/* ---------- Cabeçalho ---------- */
+.box_body_guia_detalhes_cabecalho_procs_titulo{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--cor-de-fundo-procs);
+    padding: 5px;
+}
+.box_body_guia_detalhes_cabecalho_procs{
+    display: flex;
+    flex-direction: column;
+}
+.box_body_guia_detalhes_cabecalho_procs_proc{
+    display: grid;
+    grid-template-columns: 9% 1fr 15% 10% 10% 2%;
+    text-align: center;
+    align-items: center;
+    background: transparent;
+    font-weight: bold;
+    background: var(--cor-de-fundo-procs);
+}
+/* ---------- Procedimentos ---------- */
+.box_body_guia_detalhes_procs{
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-de-fundo-procs);
+}
+.box_body_guia_detalhes_procs_proc_nome{
+    text-align: start;
+}
+.box_body_guia_detalhes_procs_proc-itens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.box_body_guia_detalhes_procs_proc{
+    display: grid;
+    grid-template-columns: 9% 1fr 15% 10% 10% 2%;
+    background: var(--cor-de-fundo-procs);
+    text-align: center;
+    align-items: center;
+    border-top: 1px solid black;
+    padding: 5px;
+    /* transition: .1s; */
+}
+/* .box_body_guia_detalhes_procs_proc:hover{
+    background-color: rgb(216, 167, 123);
+} */
+.box_body_guia_detalhes_procs_proc_item{
+    padding: 2px;
+    text-align: center;
+    background: transparent;
+    width: 100%;
+}
+/* ---------- Mostrar lápis ---------- */
+.box_body_guia_detalhes_procs_proc-itens:hover > .icon-pencil{
+    display: block;
+}
+/* ---------- Outras despesas da Guia ---------- */
+.box_body_guia_detalhes_outras{
+    border-radius: 0 0 5px 5px;
+    padding-bottom: 10px;
+    background: var(--cor-de-fundo-outras);
+}
+/* ---------- Cabeçalho ---------- */
+.box_body_guia_detalhes_outras_titulo{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--cor-de-fundo-outras);
+    padding: 5px;
+}
+.box_body_guia_detalhes_outras_cabecalho_despesa{
+    display: grid;
+    grid-template-columns: 10% 30% 15% 10% 5% 5% 10% 10% 5%;
+    text-align: center;
+    background: var(--cor-de-fundo-outras);
+    font-weight: bold;
+}
+/* ---------- Materiais e Medicamentos ---------- */
+.box_body_guia_detalhes_outras_despesa{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 10% 30% 15% 10% 5% 5% 10% 10% 5%;
+}
+.box_body_guia_detalhes_outras_despesa_itens{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.box_body_guia_detalhes_outras_despesa_item{
+    text-align: center;
+    border-top: 1px solid black;
+    background: var(--cor-de-fundo-outras);
+    padding: 5px;
+    width: 100%;
+}
+
+.despesa_icon-lixeira{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 5px;
+    background: var(--cor-de-fundo-outras);
+    border-top: 1px solid black;
+}
+/* ---------- Mostrar lápis ---------- */
+.box_body_guia_detalhes_outras_despesa_itens:hover > .icon-pencil{
+    display: block;
+}
+/* ---------- Total ---------- */
+.box_body_guia_totais{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+}
+.box_body_guia_totais > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+}
+.box_body_guia_totais_item_valor{
+    font-size: 1.1em;
+}

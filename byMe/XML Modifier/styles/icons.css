@@ -1,0 +1,51 @@
+
+/* ---------- Ícones de pincel ---------- */
+.icon-pencil{
+    display: none;
+    position: absolute;
+    height: 18px;
+    cursor: pointer;
+    right: 0;
+    top: 50%;
+}
+.icon-pencil:hover{
+    display: block;
+    transform: scale(1.1);
+}
+.icon-pencil:active{
+    transform: scale(0.9);
+}
+
+.box_body_guia_resumo > div > .icon-pencil{
+    right: 0;
+    top: 13%;
+}
+.box_body_guia_detalhes_procs_proc-itens > .icon-pencil{
+    top: 0;
+}
+.box_body_guia_detalhes_outras_despesa_itens > .icon-pencil{
+    top: 10%;
+}
+
+/* ---------- Ícones da lixeira ---------- */
+.icon-lixeira{
+    height: 18px;
+    cursor: pointer;
+}
+.icon-lixeira:hover{
+    transform: scale(1.1);
+}
+.icon-lixeira:active{
+    transform: scale(0.9);
+}
+
+.box_body_guia_resumo > .icon-lixeira{
+    position: absolute;
+    right: 1%;
+}
+.box_body_guia_detalhes_procs_proc > .icon-lixeira{
+    margin-left: 10%;
+}
+.box_body_guia_detalhes_outras_despesa_itens > .icon-lixeira{
+    margin-left: 10%;
+}
