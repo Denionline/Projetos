@@ -1,0 +1,52 @@
+#btnToXML {
+    background: var(--cor-de-fundo-btnToXML);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: .5s;
+    user-select: none;
+}
+
+#btnToXML:hover {
+    animation: borderLoading .9s infinite linear reverse;
+}
+@keyframes borderLoading {
+    25%{
+        box-shadow: 0 -1px 2px 0 rgba(255, 255, 255, 0.400);
+    }
+    50%{
+        box-shadow: 1px 0 2px 0 rgba(255, 255, 255, 0.400);
+    }
+    75%{
+        box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.400);
+    }
+    100%{
+        box-shadow: -1px 0 2px 0 rgba(255, 255, 255, 0.400);
+    }
+}
+
+
+#btnToXML:active {
+    transform: scale(0.9);
+}
+
+#btnToDeleteObj {
+    background: var(--cor-de-fundo-btnToDeleteObj);
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: .2s;
+    color: white;
+    user-select: none;
+}
+
+#btnToDeleteObj:hover {
+    animation: borderLoading .9s infinite linear reverse;
+}
+
+#btnToDeleteObj:active {
+    transform: scale(0.9);
+}
