@@ -1,0 +1,36 @@
+.opcoesAdicionais {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    width: 90%;
+    margin-top: 5px;
+}
+
+.opcoesAdicionais > div {
+    font-family: var(--font-textos);
+    color: white;
+    border-radius: 10px;
+    padding: 3px 10px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    transition: .3s;
+}
+.opcoesAdicionais_marcaTodasGuias, .opcoesAdicionais_desmarcaTodasGuias{
+    background: var(--cor-de-fundo-opcoesAdicionais);
+}
+.opcoesAdicionais_marcaTodasGuias:hover, .opcoesAdicionais_desmarcaTodasGuias:hover{
+    background: var(--cor-de-fundo-opcoesAdicionais-hover,);
+    color: black;
+}
+.opcoesAdicionais_deletaGuiasMarcadas{
+    background: var(--cor-de-fundo-btnToDeleteObj);
+}
+.opcoesAdicionais_deletaGuiasMarcadas:hover{
+    background: rgba(200, 0, 0, 0.5);
+}
+
+.opcoesAdicionais > div:active {
+    transform: scale(0.9);
+}
