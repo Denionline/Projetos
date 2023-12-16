@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+:root{
+    /* Cores */
+    --cor_background: RGB(20, 61, 109);
+    --cor_box_begin: gray;
+    --cor_box_begin_tittle: white;
+    --cor_box_begin_btn-begin: transparent;
+
+    --cor_box_list: #f2de7981;
+    --cor_box_list_camp: rgba(255, 255, 255, 0.87);
+    --cor_box_list_camp-btn-add: transparent;
+    --cor_box_list_itemns_item: #f2e5a765;
+    --cor_box_list_camp-error: rgb(167, 0, 0);
+
+    --cor_list_btn-create: #0081d1b4;
+    --cor_list_btn-extras: #ffffffcb;
+
+    --cor_box_result_tittle: rgb(0, 0, 0);
+    --box_result: #143d7381;
+    --box_result_item: #2493bfc7;
+    
+    /* Fontes */
+    --font_box_begin_tittle: 'Special Elite', 'cursive';
+
+    --font_box_list_tittle:'Cinzel Decorative', 'cursive';
+    --font_box_list_itemns_item: 'Special Elite', 'cursive';
+    --font_buttons: 'Rubik Moonrocks', 'cursive';
+}
+
+*{border: 0;padding: 0;margin: 0;}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.img_background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
