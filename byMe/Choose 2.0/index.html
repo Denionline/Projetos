@@ -6,13 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose 2.0</title>
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            user-select: none;
+        }
+        .card{
+            height: 100px;
+            width: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: .3s all ease-in-out;
+        }
+        .card > div{
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+        .front{
+            background-color: purple;
+            position: absolute;
+        }
+        .back{
+            background-color: limegreen;
+            transform: rotateY(180deg);
+        }
+        .card:active{
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 
 <body>
-    <img class="img_background" src="images/back-stars.jpg" alt="Fundo da Tela">
+    <!-- <img class="bob" src="images/anim-bob.gif" alt="Bob esponja assistindo TV"> -->
 
     <div class="caixa-listas">
-        
+
     </div>
 </body>
 

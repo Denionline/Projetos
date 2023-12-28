@@ -1,0 +1,79 @@
+:root{
+    --background: linear-gradient(355deg, #ff5ed7 0, #ff54e2 12.5%, #ff4cec 25%, #ef47f6 37.5%, #cf44ff 50%, #a845ff 62.5%, #734aff 75%, #0050ff 87.5%, #0056ff 100%);
+    --container: rgb(50,50,50);
+    --game: rgb(250, 220, 150);
+    --card_background: rgb(140, 0, 255);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--background);
+}
+
+.container{
+    background: var(--container);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0 rgb(0,0,0, 0.5);
+}
+.container__game{
+    background: var(--game);
+    height: 80%;
+    width: 90%;
+    border-radius: 10px;
+}
+.game__cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+.cards__card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: .3s all ease-in-out;
+    background: var(--card_background);
+    cursor: pointer;
+    user-select: none;
+}
+.cards__card > div{
+    backface-visibility: hidden;
+}
+.card__face{
+    background: var(--card_background);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+.card__img{
+    transform: rotateY(180deg);
+}
+.card__ativo{
+    transform: rotateY(180deg);
+}
+
+/* Temporário */
+.cards__card:active{
+    transform: rotateY(180deg);
+}
