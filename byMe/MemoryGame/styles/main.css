@@ -23,15 +23,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: 90%;
+    height: 95%;
+    width: 95%;
     border-radius: 20px;
     box-shadow: 0 0 5px 0 rgb(0,0,0, 0.5);
 }
 .container__game{
     background: var(--game);
-    height: 80%;
-    width: 90%;
+    height: 95%;
+    width: 95%;
     border-radius: 10px;
 }
 .game__cards{
@@ -69,11 +69,11 @@ body{
 .card__img{
     transform: rotateY(180deg);
 }
-.card__ativo{
+.card__active{
     transform: rotateY(180deg);
 }
 
 /* Temporário */
-.cards__card:active{
+/* .cards__card:active{
     transform: rotateY(180deg);
-}
+} */
