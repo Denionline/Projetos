@@ -8,32 +8,28 @@ function adicionaEscutadorAbas() {
 
             if (aba.target.classList[0] == 'seta-aba') {
                 if (aba.target.classList.contains('seta-up')) {
-
                     aba.target.classList.remove('seta-up');
                     aba.target.classList.add('seta-down');
                     aba.target.parentElement.parentElement.children[1].classList.remove('abaOculta');
-                    seta = 'seta-down';
-
+                    seta = ('seta-down');
                 } else {
-
                     aba.target.classList.remove('seta-down');
                     aba.target.classList.add('seta-up');
                     aba.target.parentElement.parentElement.children[1].classList.add('abaOculta');
-                    seta = 'seta-up';
-                    
+                    seta = ('seta-up');
                 }
 
                 nomeItem = aba.target.parentElement.parentElement.classList[0];
                 idGuia = parseInt(aba.target.parentElement.parentElement.parentElement.parentElement.id) - 1;
 
-                verificaAba(nomeItem, idGuia, seta)
+                verificaAba(nomeItem, idGuia, seta);
             } else {
                 if (aba.target.children[0].classList.contains('seta-up')) {
 
                     aba.target.children[0].classList.remove('seta-up');
                     aba.target.children[0].classList.add('seta-down');
                     aba.target.parentElement.children[1].classList.remove('abaOculta');
-                    seta = 'seta-down';
+                    seta = ('seta-down');
 
                 } else {
 

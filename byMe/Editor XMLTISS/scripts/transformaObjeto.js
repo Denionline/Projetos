@@ -1,18 +1,10 @@
-function transformObjectToXML(){
-    let objetoXML = obtemObjeto();
+function transformObjectToXML(objetoXML, nomeDoArquivo){
     objetoXML['ans:mensagemTISS']['ans:epilogo']['ans:hash'] = '--novo_hash--';
     let xmlFormatado = jsonToXml(objetoXML);
     // let hash = calculateHash(objetoEmXML);
     // let objetoEmXML_newHash = objetoEmXML.replace('<ans:hash>--novo_hash--</ans:hash>', `<ans:hash>${hash}</ans:hash>`);
     let objetoEmXML = xmlFormatado.replace('<?xml version="1.0" encoding="UTF-8"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
     let blob = new Blob([objetoEmXML], { type: 'application/xml' });
-
-    let nomeDoArquivo;
-    if(campoNomeDoArquivo.value){
-        nomeDoArquivo = campoNomeDoArquivo.value;
-    }else{
-        nomeDoArquivo = objetoXML['ans:mensagemTISS']['ans:prestadorParaOperadora']['ans:loteGuias']['ans:numeroLote'];
-    }
 
     //Faz o download do Arquivo.
     let link = document.createElement('a');

@@ -15,8 +15,8 @@ function adicionaEscutadorTema() {
 
 function alteraCor(cor) {
     const css = document.documentElement.style;
-
-    if (cor == 'claro') {
+    
+    if (cor == 'claro') {// Tema claro
         css.setProperty('--cor-de-fundo-body', '#2C3532');
         css.setProperty('--cor-de-fundo-box', '#D2E8E3');
         css.setProperty('--cor-de-fundo-guia', '#0F6466');
@@ -30,17 +30,17 @@ function alteraCor(cor) {
         document.querySelector('[data-cor="claro"]').src = 'imgs/sol-escuro.png';
         document.querySelector('[data-cor="escuro"]').src = 'imgs/lua-escuro.png';
     }
-    else {
+    else {// Tema Escuro
         css.setProperty('--cor-de-fundo-body', '#0D0D0D');
-        css.setProperty('--cor-de-fundo-box', '#595959');
+        css.setProperty('--cor-de-fundo-box', '#b1b1b1');
         css.setProperty('--cor-de-fundo-guia', '#0D0D0D');
         css.setProperty('--cor-de-fundo-procs', '#595959');
         css.setProperty('--cor-de-fundo-outras', '#A6A6A6');
-
+        
         css.setProperty('--cor-de-fundo-tema', 'rgb(255, 255, 255)');
         css.setProperty('--cor-de-texto-tema-caixa', 'rgb(0, 0, 0)');
         css.setProperty('--cor-de-texto-tema', 'rgb(0, 0, 0)');
-
+        
         document.querySelector('[data-cor="claro"]').src = 'imgs/sol-claro.png';
         document.querySelector('[data-cor="escuro"]').src = 'imgs/lua-claro.png';
     }

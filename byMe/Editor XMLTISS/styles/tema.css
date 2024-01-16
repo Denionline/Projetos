@@ -36,7 +36,7 @@
     transition: .3s;
 }
 .tema_claro:hover{
-    background: rgb(255, 255, 10);
+    background: rgb(255, 94, 0);
 }
 .tema_claro:hover > img{
     animation: rotate 1s forwards;

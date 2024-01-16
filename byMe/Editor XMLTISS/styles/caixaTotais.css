@@ -15,6 +15,9 @@
     font-weight: bold;
     font-family: var(--font-textos);
 }
+.box_body_guia_totais_item_descricao{
+    user-select: none;
+}
 .box_body_guia_totais_item_valor{
     font-size: 1.1em;
     font-family: var(--font-numeros);

@@ -45,3 +45,28 @@
     background: var(--cor-de-fundo-box_body);
     overflow: auto;
 }
+.box_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.box_body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.box_body::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.box_body::-webkit-scrollbar-thumb:hover {
+    background: rgb(10, 10, 10);
+}
+
+/* Ícone de adicionar item na guia */
+
+.box_body_guia_detalhes_adicionar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}

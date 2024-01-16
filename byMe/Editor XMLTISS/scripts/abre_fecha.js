@@ -18,11 +18,15 @@ function fechaCaixaXML() {
 }
 
 function abreLoading() {
-    loading.style.height = '30%';
+    loading.classList.remove('close_load')
+    loading.classList.add('open_load')
+    loading.style.height = '100%';
 }
 function fechaLoading() {
     setTimeout(() => {
-        loading.style.height = '0';
+        // loading.style.height = '0';
+        loading.classList.remove('open_load')
+        loading.classList.add('close_load')
     }, 500)
 }
 
@@ -55,7 +59,7 @@ function abrePopUpXmlGerado(){
 function fechaPopUpXmlGerado(){
     fechaBloqueioTela();
     popUpXmlGerado.style.top = '-120px';
-    popUpXmlGerado.style.left = '-420px';
+    popUpXmlGerado.style.left = '-520px';
 }
 
 function abreBloqueioTela(){
@@ -63,4 +67,18 @@ function abreBloqueioTela(){
 }
 function fechaBloqueioTela(){
     bloqueioDeTela.style.display = 'none';
+}
+
+function abreCaixaXmls(){
+    campo_caixaXmls.style.display = 'flex';
+}
+function fechaCaixaXmls(){
+    campo_caixaXmls.style.display = 'none'
+}
+
+function abrePopUpValidadorXML(){
+    popUpValidadorXML.classList.add('pop-up_validadorXML__opened');
+}
+function fechaPopUpValidadorXML(){
+    popUpValidadorXML.classList.remove('pop-up_validadorXML__opened');
 }

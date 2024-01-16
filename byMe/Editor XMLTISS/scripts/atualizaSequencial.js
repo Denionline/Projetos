@@ -24,4 +24,7 @@ function atualizaSequencial(){
         }
     }
     adicionaAoStorage(objetoDoXML);
+    let caixa = obtemCaixaXmlsObjeto();
+    caixa[obtemIdNoStorage()-1]['objetoXML'] = objetoDoXML;
+    adicionaCaixaXmlsAoStorage(caixa);
 }

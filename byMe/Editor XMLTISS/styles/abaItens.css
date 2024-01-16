@@ -1,5 +1,6 @@
 /* Estilo do ícone da aba */
 .abaOculta{
+    height: 0;
     display: none;
 }
 
@@ -29,6 +30,12 @@
     }
 }
 
+
+.box_body_guia_detalhes_procs, .box_body_guia_detalhes_outras{
+    overflow: hidden;
+    height: auto;
+}
+.box_body_guia_detalhes_outrasDespesas 
 /* Estilos utilizados para títulos dos Procedimentos e Despesas */
 .box_body_guia_detalhes_cabecalho_procs_titulo, .box_body_guia_detalhes_outras_titulo{
     transition: .1s;
