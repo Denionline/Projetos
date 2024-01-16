@@ -68,4 +68,9 @@ function atualizaValores() {
 
     cabecalhoDoXML.campoValorXML.innerText = formatValue(valorTotalDoXML)
     adicionaAoStorage(objetoXML);
+
+    let caixa = obtemCaixaXmlsObjeto();
+    let id = obtemIdNoStorage() - 1;
+    caixa[id]['ValorTotalXML'] = formatValue(valorTotalDoXML);
+    adicionaCaixaXmlsAoStorage(caixa)
 }

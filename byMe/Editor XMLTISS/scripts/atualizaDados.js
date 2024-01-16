@@ -8,7 +8,10 @@ const cabecalhoDoXML = {
 };
 
 function atualizaDados() {
+    let objetoDoXML = obtemObjeto();
+
     fechaInput();
+    fechaCaixaXmls();
 
     const objetoDefinicoes = obtemDefinicoesDaPagNoStorage();
 
@@ -19,11 +22,11 @@ function atualizaDados() {
     campoGuiasXML.innerHTML = '';
     campoQtdeGuiasSelecionadas.innerHTML = 0;
 
-    let objetoDoXML = obtemObjeto();
 
     const cabecalhoXML = objetoDoXML['ans:mensagemTISS']['ans:cabecalho'];
 
     const numeroDoProtocolo = objetoDoXML['ans:mensagemTISS']['ans:prestadorParaOperadora']['ans:loteGuias']['ans:numeroLote'];
+    campoNomeDoArquivo.value = obtemNomeDoArquivoNoStorage();
     const codigoDoPrestador = cabecalhoXML['ans:origem']['ans:identificacaoPrestador']['ans:codigoPrestadorNaOperadora'];
     const versaoXML = cabecalhoXML['ans:Padrao'] ? cabecalhoXML['ans:Padrao'] : cabecalhoXML['ans:versaoPadrao'];
     const registroANS = cabecalhoXML['ans:destino']['ans:registroANS'];
@@ -38,15 +41,15 @@ function atualizaDados() {
     for (g = 0; g < guiasXML.length; g++) {
         let guia = guiasXML[g];
 
-        let abaProcedimentos;
-        let abaDespesas;
-        
+        let abaProcedimentos = 'seta-up';
+        let abaDespesas = 'seta-up';
+
         if (objetoDefinicoes) {
             abaProcedimentos = objetoDefinicoes.abaOpenOrClosed[g].abaP;
             abaDespesas = objetoDefinicoes.abaOpenOrClosed[g].abaD;
-        }else{
+        } else {
             let itensDaGuiaNaPag = {
-                abaP:'seta-up',
+                abaP: 'seta-up',
                 abaD: 'seta-up'
             }
             guiaNaPag.abaOpenOrClosed.push(itensDaGuiaNaPag);
@@ -59,6 +62,8 @@ function atualizaDados() {
 
         arrayProcedimentos.length > 0 ? guia['ans:procedimentosExecutados'] : delete guia['ans:procedimentosExecutados'];
         arrayDespesas.length > 0 ? guia['ans:outrasDespesas'] : delete guia['ans:outrasDespesas'];
+
+        adicionaAoStorage(objetoDoXML);
 
         let procedimentos = guia['ans:procedimentosExecutados'] ? guia['ans:procedimentosExecutados'] : "";
         let despesas = guia['ans:outrasDespesas'] ? guia['ans:outrasDespesas'] : "";
@@ -83,6 +88,11 @@ function atualizaDados() {
                 // Adiciona os Procedimentos
                 campoProcedimentos.innerHTML += procedimentoHTML(procedimentos[p], p + 1, numeroGuiaOperadora);
             }
+            campoProcedimentos.innerHTML += `
+                <div class="box_body_guia_detalhes_adicionar">
+                    <img class="box_body_guia_detalhes_adicionar-img icon-add-item" src="imgs/adicionar_item.png" alt="Ícone para adicionar item.">
+                </div>
+            `
         } else {
             document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).style.display = 'none';
         }
@@ -110,20 +120,21 @@ function atualizaDados() {
             document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
         }
     }
-    
+
     adicionaDefinicoesDaPagNoStorage(guiaNaPag);
+
+    atualizaValores();
+    atualizaSequencial();
+
+    acaoTodasAsGuias();
 
     adicionaEscutadorPencil();
     adicionaEscutadorLixeira();
     adicionaEscutadorAbas();
     adicionaEscutadorTema();
     adicionaEscutadorSelecionaGuia();
-    
-    atualizaValores();
-    atualizaSequencial();
-    
-    acaoTodasAsGuias();
-    
+    adicionaEscutadorVoltar();
+
     fechaLoading();
     abreCaixaXML();
 }

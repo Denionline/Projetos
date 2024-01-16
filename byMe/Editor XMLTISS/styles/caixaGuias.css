@@ -65,26 +65,14 @@
     grid-row-end: 3;
 }
 
+.box_body_guia_resumo_data_valor {
+    height: 100%;
+    width: 100%;
+}
+
 /* ---------- Detalhes da Guia ---------- */
 .box_body_guia_detalhes{
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-
-/* ---------- Mostrar lápis ---------- */
-.box_body_guia_resumo_descricao:hover ~ .icon-pencil{
-    display: block;
-}
-.box_top_item_valor:hover ~ .icon-pencil{
-    display: block;
-}
-.box_body_guia_resumo_valor:hover ~ .icon-pencil{
-    display: block;
-}
-.box_body_guia_detalhes_procs_proc-itens:hover > .icon-pencil{
-    display: block;
-}
-.box_body_guia_detalhes_outras_despesa_itens:hover > .icon-pencil{
-    display: block;
 }

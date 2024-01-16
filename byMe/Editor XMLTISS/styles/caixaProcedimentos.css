@@ -48,6 +48,7 @@
 }
 .box_body_guia_detalhes_procedimentos{
     box-shadow: inset 0px -5px 5px 0 rgb(0, 0, 0, 0.200);
+    /* padding-bottom: 20px; */
 }
 .box_body_guia_detalhes_procs_proc{
     border-top: 1px solid black;

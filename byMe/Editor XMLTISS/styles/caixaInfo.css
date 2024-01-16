@@ -21,6 +21,7 @@
 }
 .box_info > div > .box_info_descricao{
     font-family: var(--font-textos);
+    user-select: none;
 }
 .box_info > div > .box_info_valor{
     font-family: var(--font-numeros);

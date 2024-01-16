@@ -16,31 +16,31 @@ function guiaHTML(guia, numeroGuiaOperadora, id, abaP, abaD) {
                 <div class="box_body_guia_resumo_numeroCarteira">
                     <span class="box_body_guia_resumo_descricao box_body_guia_resumo_numeroCarteira_descricao">Carteirinha:</span>
                     <input class="box_body_guia_resumo_valor box_body_guia_resumo_numeroCarteira_valor-${numeroGuiaOperadora}" data-campo="numeroCarteirinha" value="${numeroCarteirinha}" disabled>
-                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
                 </div>
 
                 <div class="box_body_guia_resumo_guiaPrestador">
                     <span class="box_body_guia_resumo_descricao box_body_guia_resumo_guiaPrestador_descricao">Guia do prestador:</span>
                     <input class="box_body_guia_resumo_valor box_body_guia_resumo_guiaPrestador_valor" data-campo="numeroGuiaPrestador" value="${numeroGuiaPrestador}" disabled>
-                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
                 </div>
 
                 <div class="box_body_guia_resumo_guiaOperadora">
                     <span class="box_body_guia_resumo_descricao box_body_guia_resumo_guiaOperadora_descricao">Guia da operadora:</span>
                     <input class="box_body_guia_resumo_valor box_body_guia_resumo_guiaOperadora_valor" data-campo="numeroGuiaOperadora" value="${numeroGuiaOperadora}" disabled>
-                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
                 </div>
 
                 <div class="box_body_guia_resumo_senha">
                     <span class="box_body_guia_resumo_descricao box_body_guia_resumo_senha_descricao">Senha:</span>
                     <input class="box_body_guia_resumo_valor box_body_guia_resumo_senha_valor" data-campo="senha" value="${senha}" disabled>
-                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
                 </div>
                 
                 <div class="box_body_guia_resumo_data">
                     <span class="box_body_guia_resumo_descricao box_body_guia_resumo_data_descricao">Data da guia:</span>
                     <input class="box_body_guia_resumo_valor box_body_guia_resumo_data_valor" data-campo="dataDaGuia" value="${data}" disabled>
-                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
                 </div>
 
             </div>
@@ -63,24 +63,24 @@ function guiaHTML(guia, numeroGuiaOperadora, id, abaP, abaD) {
             </div>
             <div class="box_body_guia_totais box_body_guia_totais-${numeroGuiaOperadora}">
                 <div class="box_body_guia_totais_procedimentos">
-                    <div class="box_body_guia_totais_procedimentos_descricao">Total procedimentos</div>
+                    <div class="box_body_guia_totais_item_descricao box_body_guia_totais_procedimentos_descricao">Total procedimentos</div>
                     <div class="box_body_guia_totais_item_valor box_body_guia_totais_procedimentos_valor"></div>
                 </div>
                 <div class="box_body_guia_totais_materiais">
-                    <div class="box_body_guia_totais_materiais_descricao">Total materiais</div>
+                    <div class="box_body_guia_totais_item_descricao box_body_guia_totais_materiais_descricao">Total materiais</div>
                     <div class="box_body_guia_totais_item_valor box_body_guia_totais_materiais_valor"></div>            
                 </div>
                 <div class="box_body_guia_totais_medicamentos">
-                    <div class="box_body_guia_totais_medicamentos_descricao">Total medicamentos</div>
+                    <div class="box_body_guia_totais_item_descricao box_body_guia_totais_medicamentos_descricao">Total medicamentos</div>
                     <div class="box_body_guia_totais_item_valor box_body_guia_totais_medicamentos_valor"></div>            
                 </div>
                 <div class="box_body_guia_totais_geral">
-                    <div class="box_body_guia_totais_geral_descricao">Total geral</div>
+                    <div class="box_body_guia_totais_item_descricao box_body_guia_totais_geral_descricao">Total geral</div>
                     <div class="box_body_guia_totais_item_valor box_body_guia_totais_geral_valor"></div>
                 </div>
             </div>
 
-            <img src="imgs/lixeira.png" class="icon-lixeira" alt="Ícone de lixeira">
+            <img src="imgs/lixeira.png" class="icon-lixeira" alt="Ícone de lixeira" title="Excluir">
         </div>
     `
 }
@@ -99,34 +99,34 @@ function procedimentoHTML(procedimento, id, numeroGuiaOperadora) {
             <!-- Código da Tabela -->
             <div class="box_body_guia_detalhes_procs_proc-itens box_body_guia_detalhes_procs_proc_tabela">
                 <input class="box_body_guia_detalhes_procs_proc_item" data-campo="codigoDaTabela" value="${codigoDaTabela}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Descrição do Procedimento -->
             <div class="box_body_guia_detalhes_procs_proc-itens box_body_guia_detalhes_procs_proc_nome">
                 <input class="box_body_guia_detalhes_procs_proc_item" data-campo="descricaoProcedimento" value="${descricaoProcedimento}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Código do Procedimento -->
             <div class="box_body_guia_detalhes_procs_proc-itens box_body_guia_detalhes_procs_proc_codigo">
                 <input class="box_body_guia_detalhes_procs_proc_item" data-campo="codigoDoProcedimento" value="${codigoDoProcedimento}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
             
             <!-- Data do Procedimento -->
             <div class="box_body_guia_detalhes_procs_proc-itens box_body_guia_detalhes_procs_proc_data">
                 <input class="box_body_guia_detalhes_procs_proc_item" data-campo="dataDoProcedimento" value="${dataDoProcedimento}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Valor total do Procedimento -->
             <div class="box_body_guia_detalhes_procs_proc-itens box_body_guia_detalhes_procs_proc_valor">
                 <input class="box_body_guia_detalhes_procs_proc_item" data-campo="valorTotalDoProcedimento" value="${valorTotalDoProcedimento}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
-            <img src="imgs/lixeira.png" class="icon-lixeira" alt="Ícone de lixeira">
+            <img src="imgs/lixeira.png" class="icon-lixeira" alt="Ícone de lixeira" title="Excluir">
         </div>
     `
 }
@@ -147,43 +147,43 @@ function despesaHTML(despesa, id, numeroGuiaOperadora) {
             <!-- Tabela da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_tabela" data-campo="tabelaDaDespesa" value="${tabelaDaDespesa}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Descrição da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input type="text" class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_nome" data-campo="descricaoDaDespesa" value="${descricaoDaDespesa}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Código da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_codigo" data-campo="codigoDaDespesa" value="${codigoDaDespesa}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Data da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_data" data-campo="dataDaDespesa" value="${dataDaDespesa}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
             
             <!-- Unidade da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_unidade"  data-campo="unidadeDaDespesa" value="${unidadeDaDespesa}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
             
             <!-- Quantidade da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_qtde" data-campo="qtdeDaDespesa" value="${parseInt(qtdeDaDespesa)}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Valor unitário da Despesa -->
             <div class="box_body_guia_detalhes_outras_despesa_itens">
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_valorU" data-campo="valorUnDaDespesa" value="${valorUnDaDespesa}" disabled>
-                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar">
+                <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
             </div>
 
             <!-- Valor total da Despesa -->
@@ -191,7 +191,7 @@ function despesaHTML(despesa, id, numeroGuiaOperadora) {
                 <input class="box_body_guia_detalhes_outras_despesa_item box_body_guia_detalhes_outras_despesa_valor" data-campo="valorDaDespesa" value="${valorDaDespesa}" disabled>
             </div>
             
-            <img src="imgs/lixeira.png" class="icon-lixeira" alt="Ícone de lixeira">
+            <img src="imgs/lixeira.png" class="icon-lixeira" alt="Ícone de lixeira" title="Excluir">
         </div>
     `
 }

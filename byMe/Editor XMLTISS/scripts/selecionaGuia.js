@@ -32,8 +32,8 @@ function acaoTodasAsGuias() {
                         caixaCheckBox.checked = false;
                     }
                 })
-            } else {
-                deletaGuiasSelecionadas();
+            } else if (btnAcao.innerText == 'Deletar guias marcadas') {
+                popUpConfirmaDeletaGuiasSelecionadas();
             }
             quantidadeGuias(caixasDeCheckbox);
         })
@@ -43,7 +43,7 @@ function acaoTodasAsGuias() {
 function quantidadeGuias() {
     let qtdeSelecionadas = 0;
     const caixasDeCheckbox = document.querySelectorAll('.box_body_guia_check-input');
-    
+
     campoQtdeGuiasSelecionadas.innerText = parseInt(qtdeSelecionadas);
 
     caixasDeCheckbox.forEach(caixaCheckBox => {
@@ -60,7 +60,6 @@ function quantidadeGuias() {
 }
 
 function deletaGuiasSelecionadas() {
-    abreBloqueioTela();
     setTimeout(() => {
         const caixasDeCheckbox = document.querySelectorAll('.box_body_guia_check-input');
         let qtdeGuiasDeletadas = 0;

@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor XMLTISS</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/geral.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js"
@@ -16,11 +15,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
         integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Editor XMLTISS</title>
 </head>
 
 <body>
     <!-- Tela de carregamento -->
-    <img src="imgs/loading.gif" id="loading" alt="Loading">
+    <div id="loading">
+        <img src="imgs/loading.gif" alt="Loading">
+    </div>
+
+    <div class="menuSuperiorDireita">
+        <div class="menuSuperiorDireita_opcoes">
+            <img class="menuSuperiorDireita_icon-menu" src="imgs/menu.png" alt="Ícone de menu">
+            <div class="menuSuperiorDireita_opcoes_btnToXML">
+                <img class="menuSuperiorDireita_opcoes_btnToXML_gif" src="imgs/download-anim1.png" alt="Botão baixar" onmouseover="mudaGifDownload()"
+                    onmouseleave="mudaGifDownload()">
+            </div>
+            <div class="menuSuperiorDireita_opcoes_btnToDeleteObj">
+                <img class="menuSuperiorDireita_opcoes_btnToDeleteObj_gif" src="imgs/lixeira-anim1.png" alt="Botão excluir"
+                    onmouseover="mudaGifExcluir()" onmouseleave="mudaGifExcluir()">
+            </div>
+        </div>
+    </div>
 
     <!-- Tela de bloqueio de conteúdo da tela, para quando um pop-up for aberto. -->
     <div class="bloqueio_pop-up" style="display: none;"></div>
@@ -37,7 +53,7 @@
 
     <!-- Pop-Up que pergunta se deseja deletar o Objeto que contem o XML carregado -->
     <div class="pop-up_deletaObj">
-        <p class="pop-up_deletaObj_descricaoPergunta">Confirma exclusão do XML? Todas as alterações serão perdidas.</p>
+        <p class="pop-up_deletaObj_descricaoPergunta">Confirma exclusão desse arquivo XML?</p>
         <div class="pop-up_deletaObj_opcoes">
             <div class="pop-up_deletaObj_opcoes_1">Sim</div>
             <div class="pop-up_deletaObj_opcoes_2">Não</div>
@@ -48,37 +64,65 @@
     <div class="pop-up_xmlGerado">
         <img class="icon-close" src="imgs/close.png" alt="Ícone para fechar pop-up">
         <div class="pop-up_xmlGerado_baixarXML">Baixar XML</div>
-        <a href="https://validatiss.com.br/public/validador-xml-tiss" target="_blank" class="pop-up_xmlGerado_encaminhaParaValidador">Ir para Validador de XML</a>
+        <!-- <div class="pop-up_xmlGerado_salvarXML">Salvar XML</div> -->
+        <a href="https://validatiss.com.br/public/validador-xml-tiss" target="_blank"
+            class="pop-up_xmlGerado_encaminhaParaValidador">Ir para Validador de XML</a>
+    </div>
+
+    <!-- Pop-Up para Confirmar exclusão das guias selecionadas  -->
+    <div class="pop-up_confirmaDeletaGuiasSelecionadas">
+        <div class="pop-up_confirmaDeletaGuiasSelecionadas_descricao">Confirma a exclusão de <span
+                class="pop-up_confirmaDeletaGuiasSelecionadas_descricao-qtde"></span>?</div>
+        <div class="pop-up_confirmaDeletaGuiasSelecionadas_opcoes">
+            <div class="pop-up_confirmaDeletaGuiasSelecionadas_opcoes-sim" data-opcao="sim">Sim</div>
+            <div class="pop-up_confirmaDeletaGuiasSelecionadas_opcoes-nao" data-opcao="nao">Não</div>
+        </div>
+    </div>
+
+    <!-- Pop-Up para perguntar se deseja ir para o validador de XML  -->
+    <div class="pop-up_validadorXML">
+        <div class="pop-up_validadorXML_descricao">Arquivo Baixado com Sucesso!</div>
+        <div class="pop-up_validadorXML_opcoes">
+            <a class="pop-up_validadorXML_opcoes-1" href="https://validatiss.com.br/public/validador-xml-tiss" target="_blank" data-opcao="sim">Ir para o validador de XML</a>
+            <div class="pop-up_validadorXML_opcoes-2" data-opcao="nao">Voltar</div>
+        </div>
     </div>
 
     <!-- Input para inserir o XML que será transformado em um Objeto -->
     <div class="caixaInputXML" style="opacity: 0;display: none;">
         <input type="file" id="fileXML" accept=".xml">
     </div>
-    
+
+    <div class="caixaXmls"></div>
+
     <!-- Parte de cima da tela que contém os botões das ações, e um input para inserir o nome do arquivo -->
     <div class="caixaBtn" style="opacity: 0;display: none;">
-        <button id="btnToXML">Gerar XML</button>
-        <input type="text" id="nomeDoArquivo" placeholder="Nome do arquivo (opcional)">
-        <button id="btnToDeleteObj">Excluir arquivo</button>
+        <div class="caixaBtn_descricao">
+            <h1 class="caixaBtn_descricao_titulo">Nome do arquivo: </h1>
+            <input type="text" class="caixaBtn_descricao_nomeDoArquivo" id="nomeDoArquivo" data-campo="nomeDoArquivo" disabled>
+            <img src="imgs/pencil.png" class="icon-pencil" alt="Ícone para alterar">
+        </div>
     </div>
-
+    
     <!-- Caixa onde é inserido o XML transformado em Objeto, para alterações das informações do mesmo. -->
     <div class="box" style="opacity: 0;display: none;">
         <div class="box_top">
             <div class="box_top_item box_top_codigoDoPrestador">
                 <div class="box_top_item_descricao box_top_codigoDoPrestador_descricao">Código do Prestador</div>
-                <input type="text" class="box_top_item_valor box_top_codigoDoPrestador_valor" data-campo="codigoDoPrestador" value="" disabled>
+                <input type="text" class="box_top_item_valor box_top_codigoDoPrestador_valor"
+                    data-campo="codigoDoPrestador" value="" disabled>
                 <img src="imgs/pencil.png" class="icon-pencil" alt="Ícone para alterar">
             </div>
             <div class="box_top_item box_top_numeroDoProtocolo">
                 <div class="box_top_item_descricao box_top_numeroDoProtocolo_descricao">Número do Protocolo</div>
-                <input type="text" class="box_top_item_valor box_top_numeroDoProtocolo_valor" data-campo="numeroDoProtocolo" value="" disabled>
+                <input type="text" class="box_top_item_valor box_top_numeroDoProtocolo_valor"
+                    data-campo="numeroDoProtocolo" value="" disabled>
                 <img src="imgs/pencil.png" class="icon-pencil" alt="Ícone para alterar">
             </div>
             <div class="box_top_item box_top_ans">
                 <div class="box_top_item_descricao box_top_ans_descricao">Registro ANS</div>
-                <input type="text" class="box_top_item_valor box_top_ans_valor" data-campo="registroANS" value="" disabled>
+                <input type="text" class="box_top_item_valor box_top_ans_valor" data-campo="registroANS" value=""
+                    disabled>
                 <img src="imgs/pencil.png" class="icon-pencil" alt="Ícone para alterar">
             </div>
             <div class="box_top_item box_top_versao">
@@ -90,7 +134,7 @@
                 <div class="box_top_item_valor box_top_valor_valor" data-campo="valorXML"></div>
             </div>
         </div>
-        
+
         <div class="box_body"></div>
 
         <div class="box_info">
@@ -106,9 +150,12 @@
     </div>
 
     <div class="opcoesAdicionais" style="display: none;">
-        <div class="opcoesAdicionais_marcaTodasGuias btnAcaoGuias">Marcar todas as guias</div>
-        <div class="opcoesAdicionais_desmarcaTodasGuias btnAcaoGuias">Desmarcar todas as guias</div>
-        <div class="opcoesAdicionais_deletaGuiasMarcadas btnAcaoGuias">Deletar guias marcadas</div>
+        <div class="opcoesAdicionais_voltar">Voltar para o Menu</div>
+        <div class="opcoesAdicionais_opcoesGuias">
+            <div class="opcoesAdicionais_marcaTodasGuias btnAcaoGuias">Marcar todas as guias</div>
+            <div class="opcoesAdicionais_desmarcaTodasGuias btnAcaoGuias">Desmarcar todas as guias</div>
+            <div class="opcoesAdicionais_deletaGuiasMarcadas btnAcaoGuias">Deletar guias marcadas</div>
+        </div>
     </div>
 
 
@@ -127,10 +174,15 @@
     <script src="scripts/atualizaSequencial.js"></script>
     <script src="scripts/calculaHash.js"></script>
     <script src="scripts/abre_fecha.js"></script>
+    <script src="scripts/caixaXmls.js"></script>
     <script src="scripts/pop-ups/pop-up_confirmaDeletaObj.js"></script>
     <script src="scripts/pop-ups/pop-up_xmlGerado.js"></script>
+    <script src="scripts/pop-ups/pop-up_confirmaDeleteGuiasSelecionadas.js"></script>
+    <script src="scripts/pop-ups/pop-up_validadorXML.js"></script>
     <script src="scripts/abaItens.js"></script>
+    <script src="scripts/nomeDoArquivo.js"></script>
     <script src="scripts/selecionaGuia.js"></script>
+    <script src="scripts/menuSuperiorDireita.js"></script>
     <script src="scripts/alteraCor.js"></script>
     <script src="scripts/cookies.js"></script>
     <script src="scripts/main.js"></script>

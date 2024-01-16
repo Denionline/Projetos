@@ -14,6 +14,10 @@ function parseXML(xml) {
                     schemaLocation: node.parentElement.attributes[2].nodeValue
                 }
                 adicionaMensagemTISSstorage(atributos);
+
+                let caixaXmls = obtemCaixaXmlsObjeto();
+                caixaXmls[caixaXmls.length - 1]['mensagemTISS'] = atributos;
+                adicionaCaixaXmlsAoStorage(caixaXmls);
             }         
         }
 
