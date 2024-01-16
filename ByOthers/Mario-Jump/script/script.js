@@ -9,12 +9,12 @@ const score = document.querySelector('#score')
 var end = 0
 var point = 0;
 
-function play () {
+function play() {
     startScreen.style.display = 'none'
     pipeClass.style.display = 'block'
 }
 
-function jump (){
+function jump() {
     mario.classList.add('jump')
 
     setTimeout(() => {
@@ -22,12 +22,12 @@ function jump (){
     }, 500)
 }
 
-function loop(setInterval(() => {
+setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
     // console.log(point)
 
-    if(pipePosition < 121 && pipePosition > 0 && marioPosition < 60){
+    if (pipePosition < 121 && pipePosition > 0 && marioPosition < 60) {
         pipe.style.animation = 'none'
         pipe.style.left = `${pipePosition}px`
 
@@ -41,17 +41,16 @@ function loop(setInterval(() => {
         tryagain.style.display = 'grid'
         end = 1
         // score.innerHTML = point
-    } else if(pipePosition < 121 && pipePosition > 0){
+    } else if (pipePosition < 121 && pipePosition > 0) {
         point = point + 1
         points.innerHTML = point
-    }, 10);
-}
+    }
+})
 
-loop();
 window.addEventListener('keydown', jump); window.addEventListener('click', jump);
 
 document.querySelector('#again').addEventListener('click', () => {
-    location.reload();    
+    location.reload();
 })
 
 document.querySelector('#start').addEventListener('click', play)
