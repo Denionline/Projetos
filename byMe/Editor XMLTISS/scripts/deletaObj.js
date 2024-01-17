@@ -11,8 +11,14 @@ function deletaObj(){
     adicionaCaixaXmlsAoStorage(caixa);
     
     abreLoading();
-    fechaCaixaXML();
-    mostraXmlsNaCaixa();
-    abreCaixaXmls();
+
+    if(caixa.length > 0){
+        mostraXmlsNaCaixa();
+        abreCaixaXmls();
+    }else{
+        fechaCaixaXML();
+        abreInput();
+    }
+
     fechaLoading();
 }

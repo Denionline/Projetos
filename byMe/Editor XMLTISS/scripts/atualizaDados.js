@@ -120,6 +120,7 @@ function atualizaDados() {
             document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
         }
     }
+    abreMenuSuperiorEsquerda();
 
     adicionaDefinicoesDaPagNoStorage(guiaNaPag);
 

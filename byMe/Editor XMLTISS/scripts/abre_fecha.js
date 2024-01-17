@@ -24,7 +24,6 @@ function abreLoading() {
 }
 function fechaLoading() {
     setTimeout(() => {
-        // loading.style.height = '0';
         loading.classList.remove('open_load')
         loading.classList.add('close_load')
     }, 500)
@@ -37,6 +36,7 @@ function abreInput() {
     }, 1000)
     inputFile.value = '';
 }
+
 function fechaInput() {
     caixaInputFile.style.opacity = '0';
     caixaInputFile.style.display = 'none';
@@ -73,7 +73,7 @@ function abreCaixaXmls(){
     campo_caixaXmls.style.display = 'flex';
 }
 function fechaCaixaXmls(){
-    campo_caixaXmls.style.display = 'none'
+    campo_caixaXmls.style.display = 'none';
 }
 
 function abrePopUpValidadorXML(){
@@ -81,4 +81,11 @@ function abrePopUpValidadorXML(){
 }
 function fechaPopUpValidadorXML(){
     popUpValidadorXML.classList.remove('pop-up_validadorXML__opened');
+}
+
+function abreMenuSuperiorEsquerda(){
+    menuSuperiorDireita.style.display = 'block';
+}
+function fechaMenuSuperiorEsquerda(){
+    menuSuperiorDireita.style.display = 'none';
 }
