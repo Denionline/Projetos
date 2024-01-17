@@ -130,6 +130,8 @@ function atualizaDados() {
     acaoTodasAsGuias();
 
     adicionaEscutadorPencil();
+    adicionaEscutadorInput();
+    adicionaEscutadorBaixarXml();
     adicionaEscutadorLixeira();
     adicionaEscutadorAbas();
     adicionaEscutadorTema();
