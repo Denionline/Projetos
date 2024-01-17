@@ -6,6 +6,7 @@ function adicionaEscutadorPencil() {
 
             if (itemSelecionado.disabled) {
                 itemSelecionado.removeAttribute('disabled');
+                itemSelecionado.select();
                 itemSelecionado.style.cursor = 'text';
                 botao.target.src = 'imgs/valid.png';// Altera o ícone para valid.png.
                 botao.target.classList.add('icon-valid');
