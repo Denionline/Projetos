@@ -5,7 +5,7 @@ const btnToXML = document.querySelector('.menuSuperiorDireita_opcoes_btnToXML');
 btnToXML.addEventListener('click', () => {
     abreBloqueioTela();
     atualizaDados();
-    // transformObjectToXML(obtemObjeto(), obtemNomeDoArquivoNoStorage());
+    transformObjectToXML(obtemObjeto(), obtemNomeDoArquivoNoStorage());
     abrePopUpValidadorXML();
 })
 function mudaGifDownload() {
