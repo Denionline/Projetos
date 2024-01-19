@@ -3,6 +3,7 @@ function guiaHTML(guia, numeroGuiaOperadora, id, abaP, abaD) {
     let numeroCarteirinha = guia['ans:dadosBeneficiario']['ans:numeroCarteira'];
     let senha = guia['ans:dadosAutorizacao']['ans:senha'] == undefined ? "" : guia['ans:dadosAutorizacao']['ans:senha'];
     let data = formatData(guia['ans:dadosAutorizacao']['ans:dataAutorizacao']);
+    let dataValidadeSenha =  formatData(guia['ans:dadosAutorizacao']['ans:dataValidadeSenha']);
 
     return `
         <div class="box_body_guia box_body_guia-${numeroGuiaOperadora}" id="${id}">
@@ -38,8 +39,14 @@ function guiaHTML(guia, numeroGuiaOperadora, id, abaP, abaD) {
                 </div>
                 
                 <div class="box_body_guia_resumo_data">
-                    <span class="box_body_guia_resumo_descricao box_body_guia_resumo_data_descricao">Data da guia:</span>
+                    <span class="box_body_guia_resumo_descricao box_body_guia_resumo_data_descricao">Data da autorização:</span>
                     <input class="box_body_guia_resumo_valor box_body_guia_resumo_data_valor" data-campo="dataDaGuia" value="${data}" disabled>
+                    <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
+                </div>
+
+                <div class="box_body_guia_resumo_dataValidadeSenha">
+                    <span class="box_body_guia_resumo_descricao box_body_guia_resumo_dataValidadeSenha_descricao">Data da validade da senha:</span>
+                    <input class="box_body_guia_resumo_valor box_body_guia_resumo_dataValidadeSenha_valor" data-campo="dataValidadeSenha" value="${dataValidadeSenha}" disabled>
                     <img src="imgs/pencil.png" class="icon-pencil" data-id="${id}" alt="Ícone para alterar" title="Editar">
                 </div>
 

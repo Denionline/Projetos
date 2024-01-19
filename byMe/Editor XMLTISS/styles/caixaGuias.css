@@ -18,12 +18,20 @@
     text-transform: uppercase;
     font-family: var(--font-titulos);
     font-weight: bold;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+.box_body_guia_titulo:hover{
+    box-shadow: inset 0 0 5px 0 black;
 }
 
 /* ---------- Resumo da Guia ---------- */
 .box_body_guia_resumo{
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
     position: relative;
     background: var(--cor-de-fundo-resumo);
@@ -56,13 +64,6 @@
     text-align: center;
     background: transparent;
     font-family: var(--font-numeros);
-}
-
-.box_body_guia_resumo_data{
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
 }
 
 .box_body_guia_resumo_data_valor {
