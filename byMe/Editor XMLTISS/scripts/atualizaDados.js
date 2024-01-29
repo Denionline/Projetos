@@ -116,6 +116,11 @@ function atualizaDados() {
                 // Adiciona as Despesas
                 campoDespesas.innerHTML += despesaHTML(despesas[d], d + 1, numeroGuiaOperadora);
             }
+            campoDespesas.innerHTML += `
+            <div class="box_body_guia_detalhes_adicionar">
+                <img class="box_body_guia_detalhes_adicionar-img icon-add-item" src="imgs/adicionar_item.png" alt="Ícone para adicionar item.">
+            </div>
+        `
         } else {
             document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
         }
@@ -137,6 +142,7 @@ function atualizaDados() {
     adicionaEscutadorTema();
     adicionaEscutadorSelecionaGuia();
     adicionaEscutadorVoltar();
+    adicionaEscutadorInsereItem();
 
     fechaLoading();
     abreCaixaXML();
