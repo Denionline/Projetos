@@ -22,7 +22,6 @@ function atualizaDados() {
     campoGuiasXML.innerHTML = '';
     campoQtdeGuiasSelecionadas.innerHTML = 0;
 
-
     const cabecalhoXML = objetoDoXML['ans:mensagemTISS']['ans:cabecalho'];
 
     const numeroDoProtocolo = objetoDoXML['ans:mensagemTISS']['ans:prestadorParaOperadora']['ans:loteGuias']['ans:numeroLote'];
@@ -94,7 +93,8 @@ function atualizaDados() {
                 </div>
             `
         } else {
-            document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).style.display = 'none';
+            // document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).style.display = 'none';
+            document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).classList.add('box_body_guia_detalhes__vazio');
         }
 
         if (despesas) {
@@ -122,7 +122,8 @@ function atualizaDados() {
             </div>
         `
         } else {
-            document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
+            //     document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
+            document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).classList.add('box_body_guia_detalhes__vazio');
         }
     }
     abreMenuSuperiorEsquerda();

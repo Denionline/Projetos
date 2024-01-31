@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap');
 
 /* Estilos do Objeto do XML */
-@import 'caixaPrincipal.css';
 @import 'caixaGuias.css';
 @import 'caixaProcedimentos.css';
 @import 'caixaDespesas.css';
@@ -11,6 +10,7 @@
 @import 'caixaInfo.css';
 @import 'caixaXmls.css';
 @import 'caixaBtn.css';
+@import 'caixaPrincipal.css';
 
 /* Estilos dos ícones e botões */
 @import 'icons.css';

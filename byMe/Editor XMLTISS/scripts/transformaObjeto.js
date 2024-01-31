@@ -1,12 +1,12 @@
-function adicionaEscutadorBaixarXml(){
-    const btnBaixarXml = document.querySelector('.menuSuperiorDireita_opcoes_btnToXML_gif');
+// function adicionaEscutadorBaixarXml(){
+//     const btnBaixarXml = document.querySelector('.menuSuperiorDireita_opcoes_btnToXML_gif');
 
-    btnBaixarXml.addEventListener('click', () => {
-        const objetoXML = obtemObjeto();
-        const nomeDoArquivo = obtemNomeDoArquivoNoStorage();
-        transformObjectToXML(objetoXML, nomeDoArquivo);
-    })
-}
+//     btnBaixarXml.addEventListener('click', () => {
+//         const objetoXML = obtemObjeto();
+//         const nomeDoArquivo = obtemNomeDoArquivoNoStorage();
+//         transformObjectToXML(objetoXML, nomeDoArquivo);
+//     })
+// }
 
 function transformObjectToXML(objetoXML, nomeDoArquivo){
     objetoXML['ans:mensagemTISS']['ans:epilogo']['ans:hash'] = '--novo_hash--';

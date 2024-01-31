@@ -1,6 +1,7 @@
 
 function adicionaEscutadorInsereItem() {
     const icons_insere = document.querySelectorAll('.icon-add-item');
+    const itens_vazio = document.querySelectorAll('.box_body_guia_detalhes__vazio');
 
     icons_insere.forEach(icon_insere => {
         icon_insere.addEventListener('click', icon => {
@@ -8,7 +9,18 @@ function adicionaEscutadorInsereItem() {
             ), parseInt(icon.target.parentElement.parentElement.parentElement.parentElement.parentElement.id) - 1);
         })
     })
+    itens_vazio.forEach(item_vazio => {
+        item_vazio.addEventListener('click', item => {
+            let nome = item.target.innerText;
+            let idGuia = item.target.parentElement.parentElement.parentElement.id;
 
+            if(nome == 'PROCEDIMENTOS'){
+                insereItemVazio(true, idGuia)
+            }else{
+                insereItemVazio()
+            }
+        })
+    })
 }
 
 function insereItem(item, idGuia) {
@@ -53,4 +65,9 @@ function insereDespesa(despesas) {
     despesa['ans:servicosExecutados']['ans:quantidadeExecutada'] = 0;
     despesa['ans:servicosExecutados']['ans:valorUnitario'] = 0.00;
     despesa['ans:servicosExecutados']['ans:valorTotal'] = 0.00;
+}
+
+
+function insereItemVazio(item, idGuia){
+
 }
