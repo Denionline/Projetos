@@ -70,3 +70,14 @@
     align-items: center;
     width: 100%;
 }
+
+
+
+
+.box_body_guia_detalhes__vazio{
+    background-color: transparent;
+}
+
+.box_body_guia_detalhes__vazio > :first-child > .seta-aba{
+    display: none;
+}

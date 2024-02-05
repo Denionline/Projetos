@@ -1,13 +1,16 @@
 const popUpXmlGerado = document.querySelector('.pop-up_xmlGerado');
 
+function adicionaEscutadorBaixarXml() {
+    const btnToXML = document.querySelector('.menuSuperiorDireita_opcoes_btnToXML');
 
-const btnToXML = document.querySelector('.menuSuperiorDireita_opcoes_btnToXML');
-btnToXML.addEventListener('click', () => {
-    abreBloqueioTela();
-    atualizaDados();
-    // transformObjectToXML(obtemObjeto(), obtemNomeDoArquivoNoStorage());
-    abrePopUpValidadorXML();
-})
+    btnToXML.addEventListener('click', () => {
+        abreBloqueioTela();
+        atualizaDados();
+        transformObjectToXML(obtemObjeto(), obtemNomeDoArquivoNoStorage());
+        abrePopUpValidadorXML();
+    })
+}
+
 function mudaGifDownload() {
     const gifDownload = document.querySelector('.menuSuperiorDireita_opcoes_btnToXML_gif');
 

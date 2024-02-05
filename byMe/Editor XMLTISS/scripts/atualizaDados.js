@@ -22,7 +22,6 @@ function atualizaDados() {
     campoGuiasXML.innerHTML = '';
     campoQtdeGuiasSelecionadas.innerHTML = 0;
 
-
     const cabecalhoXML = objetoDoXML['ans:mensagemTISS']['ans:cabecalho'];
 
     const numeroDoProtocolo = objetoDoXML['ans:mensagemTISS']['ans:prestadorParaOperadora']['ans:loteGuias']['ans:numeroLote'];
@@ -94,7 +93,8 @@ function atualizaDados() {
                 </div>
             `
         } else {
-            document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).style.display = 'none';
+            // document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).style.display = 'none';
+            document.querySelector(`.box_body_guia_detalhes_procs-${numeroGuiaOperadora}`).classList.add('box_body_guia_detalhes__vazio');
         }
 
         if (despesas) {
@@ -116,8 +116,14 @@ function atualizaDados() {
                 // Adiciona as Despesas
                 campoDespesas.innerHTML += despesaHTML(despesas[d], d + 1, numeroGuiaOperadora);
             }
+            campoDespesas.innerHTML += `
+            <div class="box_body_guia_detalhes_adicionar">
+                <img class="box_body_guia_detalhes_adicionar-img icon-add-item" src="imgs/adicionar_item.png" alt="Ícone para adicionar item.">
+            </div>
+        `
         } else {
-            document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
+            //     document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).style.display = 'none';
+            document.querySelector(`.box_body_guia_detalhes_outras-${numeroGuiaOperadora}`).classList.add('box_body_guia_detalhes__vazio');
         }
     }
     abreMenuSuperiorEsquerda();
@@ -130,11 +136,14 @@ function atualizaDados() {
     acaoTodasAsGuias();
 
     adicionaEscutadorPencil();
+    adicionaEscutadorInput();
+    adicionaEscutadorBaixarXml();
     adicionaEscutadorLixeira();
     adicionaEscutadorAbas();
     adicionaEscutadorTema();
     adicionaEscutadorSelecionaGuia();
     adicionaEscutadorVoltar();
+    adicionaEscutadorInsereItem();
 
     fechaLoading();
     abreCaixaXML();
