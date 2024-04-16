@@ -9,18 +9,26 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="container__game">
-            <div class="game__cards">
+    <section class="Main">
+        <h1 class="Title Montserrat">Memory Game</h1>
+        <form class="Container">
+            <label class="Label Seymour" for="PairsAmount">Selecione a quantidade de pares para o jogo</label>
+            <select class="Select Montserrat" name="PairsAmount" id="PairsAmount">
+                <option value="4">4 pares</option>
+                <option value="6">6 pares</option>
+                <option value="8">8 pares</option>
+                <option value="10">10 pares</option>
+                <option value="12">12 pares</option>
+                <!-- <option value="14">14 pares</option>
+                <option value="16">16 pares</option>
+                <option value="18">18 pares</option>
+                <option value="20">20 pares</option> -->
+            </select>
+            <input type="submit" class="Button Montserrat" value="Iniciar Jogo">
+        </form>
 
-                <!-- <div class="cards__card">
-                    <img class="card__img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif">
-                    <div class="card__face"></div>
-                </div> -->                
-
-            </div>
-        </div>
-    </div>
+        <div class="Cards"></div>
+    </section>
 
     <script src="main.js"></script>
 </body>

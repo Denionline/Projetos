@@ -1,79 +1,147 @@
-:root{
-    --background: linear-gradient(355deg, #ff5ed7 0, #ff54e2 12.5%, #ff4cec 25%, #ef47f6 37.5%, #cf44ff 50%, #a845ff 62.5%, #734aff 75%, #0050ff 87.5%, #0056ff 100%);
-    --container: rgb(50,50,50);
-    --game: rgb(250, 220, 150);
-    --card_background: rgb(140, 0, 255);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap');
+
+.Montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+.Seymour {
+    font-family: "Seymour One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
+    --Background: linear-gradient(355deg, #ff5ed7 0, #ff54e2 12.5%, #ff4cec 25%, #ef47f6 37.5%, #cf44ff 50%, #a845ff 62.5%, #734aff 75%, #0050ff 87.5%, #0056ff 100%);
+    --Container: rgb(50, 50, 50);
+    --Cards: rgb(250, 220, 150);
+    --Card: rgb(140, 0, 255);
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: var(--background);
+    background: var(--Background);
 }
 
-.container{
-    background: var(--container);
+.Main {
+    background: transparent;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 95%;
-    width: 95%;
-    border-radius: 20px;
-    box-shadow: 0 0 5px 0 rgb(0,0,0, 0.5);
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    user-select: none;
 }
-.container__game{
-    background: var(--game);
-    height: 95%;
+
+.Title{
+    position: absolute;
+    color: white;
+    margin-bottom: 4em;
+    font-size: 3em;
+}
+
+.Main .Container {
+    display: flex;
+    background: var(--Container);
+    height: 100%;
     width: 95%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: center;
+}
+
+.Main .Container .Label{
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: .8em;
+}
+.Main .Container .Select{
+    width: 50%;
+    font-size: 1.4em;
+    padding: .3em;
+    text-align: center;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.Main .Container .Button{
+    margin-top: 1em;
+    padding: 1em;
+    font-size: 1.2em;
+    cursor: pointer;
     border-radius: 10px;
+    transition: .3s all ease;
 }
-.game__cards{
+.Main .Container .Button:hover{
+    letter-spacing: .1em;
+}
+
+.Main .Cards {
+    background: var(--Cards);
+    height: auto;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
 }
-.cards__card{
+
+.Main .Cards .Card {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 150px;
-    width: 150px;
+    height: 7em;
+    width: 7em;
     padding: 5px;
-    border-radius: 20px;
+    border-radius: 10px;
     transform-style: preserve-3d;
     transition: .3s all ease-in-out;
-    background: var(--card_background);
+    background: var(--Card);
     cursor: pointer;
     user-select: none;
 }
-.cards__card > div{
-    backface-visibility: hidden;
-}
-.card__face{
-    background: var(--card_background);
+
+.Main .Cards .Card .Face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Card);
     position: absolute;
     height: 100%;
     width: 100%;
     border-radius: 20px;
-}
-.card__img{
-    transform: rotateY(180deg);
-}
-.card__active{
-    transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 
-/* Temporário */
-/* .cards__card:active{
+.Main .Cards .Card .Sprite {
     transform: rotateY(180deg);
-} */
+    height: 4em;
+}
+
+.Main .Cards .Card .Face .Pokeball {
+    height: 2em;
+}
+
+.Main .Cards .Card.Active {
+    transform: rotateY(180deg);
+}
+.Main .Cards .Card.Correct {
+    transform: rotateY(180deg);
+}
