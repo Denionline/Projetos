@@ -1,16 +1,58 @@
-function PageStart() {
-    localStorage.clear();
+const Levels = [4, 6, 8, 10, 12];
 
-    const Select = document.querySelector('.Select');
-    const Button = document.querySelector('.Button');
+function PageStart() {
+    const Button = document.querySelector('.Main .Container .Button');
+
+    if (!localStorage.getItem('CurrentLevel')) {
+        localStorage.setItem('CurrentLevel', JSON.stringify(0));
+    }
+
+    const CurrentLevel = parseInt(JSON.parse(localStorage.getItem('CurrentLevel')));
+
+    Button.innerText = (`Start Level ${CurrentLevel + 1}`);
 
     Button.addEventListener('click', Evento => {
         Evento.preventDefault();
-        InsertCards(Select.value);
+        InsertCards(Levels[CurrentLevel]);
+        GameStartAnimations(CurrentLevel);
     })
 }
-PageStart();
+PageStart(0);
 
+function GameStartAnimations(AmountPairs) {
+    const Container = document.querySelector('.Main .Container');
+    Container.classList.add('HeightZero');
+    const Cards = document.querySelector('.Main .Cards');
+    Levels.forEach(Level => {
+        if (Cards.classList.contains(`Pairs_${Level}`)) {
+            Cards.classList.remove(`Pairs_${Level}`);
+        }
+    })
+    Cards.classList.add(`Pairs_${Levels[AmountPairs]}`);
+
+    if (document.querySelectorAll('.Id-undefined')) {
+        document.querySelectorAll('.Id-undefined').forEach(Field => {
+            Field.remove();
+        })
+    }
+}
+
+function All() {
+    const Cards = document.querySelectorAll('.Main .Cards .Card');
+    Cards.forEach(Card => {
+        Card.classList.add('Correct');
+    })
+}
+
+function GameFinishAnimations(CurrentLevel) {
+    const Container = document.querySelector('.Main .Container');
+    Container.classList.remove('HeightZero');
+
+    const Cards = document.querySelectorAll('.Main .Cards .Card');
+    Cards.forEach(Card => {
+        Card.remove();
+    })
+}
 
 async function InsertCards(AmountPairs) {
     if (!localStorage.getItem('Pairs')) {
@@ -103,7 +145,7 @@ function CardsListAction() {
 
 function CardAction(Card) {
     let Pairs = JSON.parse(localStorage.getItem('Pairs'));
-    let IdPokemon = Card.id;
+    let IdPokemon = parseInt(Card.id);
 
     if (!Card.classList.contains('Correct')) {
         if (!Card.classList.contains('Active')) {
@@ -127,4 +169,22 @@ function CardAction(Card) {
         }
     }
 
+    if (document.querySelectorAll('.Card').length == document.querySelectorAll('.Correct').length) {
+        const CurrentLevel = parseInt(JSON.parse(localStorage.getItem('CurrentLevel'))) + 1;
+        if (Levels.length > CurrentLevel) {
+            localStorage.setItem('CurrentLevel', JSON.stringify(CurrentLevel));
+            GameFinishAnimations(CurrentLevel);
+            PageStart(1);
+        } else {
+            localStorage.clear();
+            document.querySelector('.Main').innerHTML += `
+                <div class="Congratulations">
+                    <h1 class="Seymour">Meus parábens por concluir o jogo!</h1>
+                    <h2 class="Montserrat ">Caso queira jogar novamente, recarregue a página.</h2>
+                </div>
+            `
+            document.querySelector('.Congratulations').classList.add('Active');
+            document.querySelector('.Cards').remove();
+        }
+    }
 }
